@@ -109,8 +109,8 @@ export function parseProductsFromMCPResult(
 export async function getFeaturedProducts(): Promise<MCPSearchResult | null> {
   try {
     const result = await searchProducts(
-      'featured bestseller popular',
-      'Looking for featured products to display on homepage'
+      '*',
+      'Show the latest and most popular products from the store for a homepage showcase'
     );
     return result;
   } catch (error) {
@@ -135,6 +135,28 @@ export async function searchProductsByCategory(
     console.error(`Failed to search products for category ${category}:`, error);
     return null;
   }
+}
+
+/**
+ * Filter out internal / ugly tags that shouldn't be displayed on product cards.
+ * Removes: no_departamento, season tags, and the product_type duplicate.
+ */
+const HIDDEN_TAG_PATTERNS = [
+  /^no_/i,
+  /^primavera-verano/i,
+  /^otoño-invierno/i,
+];
+
+export function filterDisplayTags(
+  tags: string[],
+  productType?: string
+): string[] {
+  return tags.filter((tag) => {
+    if (productType && tag.toLowerCase() === productType.toLowerCase()) {
+      return false;
+    }
+    return !HIDDEN_TAG_PATTERNS.some((pattern) => pattern.test(tag));
+  });
 }
 
 /**

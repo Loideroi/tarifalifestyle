@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/common/PageHeader';
 import { Container } from '@/components/common/Container';
 import { Section } from '@/components/common/Section';
-import { LoadingSpinner } from '@/components/common/LoadingSpinner';
+import { LoadingCard } from '@/components/common/LoadingSpinner';
 import { ErrorDisplay } from '@/components/common/ErrorBoundary';
 import { SearchBar } from '@/components/shop/SearchBar';
 import { CategoryFilter } from '@/components/shop/CategoryFilter';
@@ -13,7 +13,7 @@ import { ProductCard } from '@/components/shop/ProductCard';
 import { ProductGrid } from '@/components/shop/ProductGrid';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, ShoppingBag } from 'lucide-react';
-import { getStoreUrl } from '@/lib/shopify/mcp-client';
+import { getStoreUrl, filterDisplayTags } from '@/lib/shopify/mcp-client';
 import type { MCPParsedResponse } from '@/lib/shopify/types';
 
 function extractHandle(url: string): string {
@@ -24,7 +24,7 @@ function extractHandle(url: string): string {
 export default function ShopPage() {
   const t = useTranslations('Shop');
   const [searchResult, setSearchResult] = useState<MCPParsedResponse | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState('all');
   const [hasSearched, setHasSearched] = useState(false);
@@ -36,11 +36,39 @@ export default function ShopPage() {
     { id: 'accessories', label: t('categories.accessories') },
   ];
 
+  // Load default products on mount
+  useEffect(() => {
+    async function loadDefaults() {
+      try {
+        const response = await fetch('/api/shopify/products?action=featured');
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data: MCPParsedResponse = await response.json();
+        setSearchResult(data);
+      } catch {
+        // Silently fail
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadDefaults();
+  }, []);
+
   const handleSearch = useCallback(
     async (query: string) => {
       if (!query) {
-        setSearchResult(null);
+        // Reset to default products
+        setLoading(true);
         setHasSearched(false);
+        try {
+          const response = await fetch('/api/shopify/products?action=featured');
+          if (!response.ok) throw new Error('Failed to fetch');
+          const data: MCPParsedResponse = await response.json();
+          setSearchResult(data);
+        } catch {
+          setSearchResult(null);
+        } finally {
+          setLoading(false);
+        }
         return;
       }
 
@@ -74,8 +102,7 @@ export default function ShopPage() {
       if (categoryId !== 'all') {
         handleSearch(categoryId);
       } else {
-        setSearchResult(null);
-        setHasSearched(false);
+        handleSearch('');
       }
     },
     [handleSearch]
@@ -111,8 +138,10 @@ export default function ShopPage() {
 
           {/* Loading State */}
           {loading && (
-            <div className="flex items-center justify-center py-16">
-              <LoadingSpinner size="lg" text="Searching products..." />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-6">
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                <LoadingCard key={i} className="aspect-square" />
+              ))}
             </div>
           )}
 
@@ -126,7 +155,7 @@ export default function ShopPage() {
           )}
 
           {/* Results */}
-          {!loading && !error && hasSearched && hasProducts && (
+          {!loading && !error && hasProducts && (
             <ProductGrid columns={4}>
               {products.map((product) => {
                 const handle = extractHandle(product.url);
@@ -140,7 +169,7 @@ export default function ShopPage() {
                     currency={product.price_range.currency}
                     imageUrl={product.image_url}
                     imageAlt={product.image_alt_text}
-                    tags={product.tags.slice(0, 2)}
+                    tags={filterDisplayTags(product.tags, product.product_type).slice(0, 2)}
                     available={hasAvailableVariant}
                   />
                 );
@@ -148,7 +177,7 @@ export default function ShopPage() {
             </ProductGrid>
           )}
 
-          {/* No results */}
+          {/* No results (only after an explicit search) */}
           {!loading && !error && hasSearched && !hasProducts && (
             <div className="flex flex-col items-center justify-center py-16 text-center">
               <ShoppingBag className="mb-4 h-12 w-12 text-sand-300" />
@@ -156,17 +185,9 @@ export default function ShopPage() {
             </div>
           )}
 
-          {/* Default: link to store */}
-          {!hasSearched && !loading && (
-            <div className="flex flex-col items-center justify-center py-16 text-center">
-              <ShoppingBag className="mb-4 h-16 w-16 text-ocean-300" />
-              <h3 className="mb-2 text-xl font-semibold text-ocean-800">
-                Tarifa Air Force Shop
-              </h3>
-              <p className="mb-6 max-w-md text-driftwood-500">
-                Browse the full collection of beach lifestyle fashion and accessories.
-                Search above or visit the store directly.
-              </p>
+          {/* Store link */}
+          {!loading && (
+            <div className="mt-10 text-center">
               <Button
                 asChild
                 size="lg"

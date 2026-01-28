@@ -7,7 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { LoadingCard } from '@/components/common/LoadingSpinner';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { ProductGrid } from '@/components/shop/ProductGrid';
-import { getStoreUrl } from '@/lib/shopify/mcp-client';
+import { getStoreUrl, filterDisplayTags } from '@/lib/shopify/mcp-client';
 import type { MCPParsedResponse } from '@/lib/shopify/types';
 
 function extractHandle(url: string): string {
@@ -80,7 +80,7 @@ export function ShopPreview({
                   currency={product.price_range.currency}
                   imageUrl={product.image_url}
                   imageAlt={product.image_alt_text}
-                  tags={product.tags.slice(0, 2)}
+                  tags={filterDisplayTags(product.tags, product.product_type).slice(0, 2)}
                   available={hasAvailableVariant}
                 />
               );
