@@ -6,9 +6,9 @@ import { LoadingSpinner } from '@/components/common/LoadingSpinner';
 import { cn } from '@/lib/utils';
 
 export const WINDGURU_SPOTS = {
-  losLances: 458886,
+  losLances: 48776,
   valdevaqueros: 541946,
-  puntaPaloma: 13586,
+  campoDeFutbol: 976270,
 } as const;
 
 type SpotKey = keyof typeof WINDGURU_SPOTS;
@@ -44,13 +44,21 @@ export function WindguruEmbed({
         var loader = function () {
           var arg = [
             "s=${actualSpotId}",
-            "m=3",
+            "m=100",
             "uid=${uid}",
+            "ai=0",
             "wj=knots",
             "tj=c",
-            "fhours=168",
+            "waj=m",
+            "tij=cm",
+            "odh=0",
+            "doh=24",
+            "fhours=240",
+            "hrsm=2",
+            "vt=forecasts",
             "lng=${language}",
-            "p=WINDSPD,GUST,SMER,TMPE,RATING"
+            "idbs=1",
+            "p=WINDSPD,GUST,SMER,TMPE,FLHGT,CDC,APCP1s,RATING"
           ];
           var s = document.createElement("script");
           var tag = document.getElementsByTagName("script")[0];
@@ -89,7 +97,7 @@ export function WindguruEmbed({
     <Card className={cn('overflow-hidden', className)}>
       <div className="border-b border-sand-200 bg-sand-50 p-4">
         <h3 className="font-semibold text-ocean-800">Windguru Forecast</h3>
-        <p className="text-sm text-driftwood-400">7-day professional forecast</p>
+        <p className="text-sm text-driftwood-400">10-day professional forecast</p>
       </div>
       <div className="relative min-h-[300px]">
         {isLoading && (

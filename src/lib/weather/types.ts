@@ -124,7 +124,7 @@ export interface WindguruSpot {
 }
 
 export const WINDGURU_SPOTS: WindguruSpot[] = [
-  { id: 458886, name: 'Los Lances', nameKey: 'losLances' },
+  { id: 48776, name: 'Los Lances', nameKey: 'losLances' },
   { id: 541946, name: 'Valdevaqueros', nameKey: 'valdevaqueros' },
-  { id: 13586, name: 'Punta Paloma', nameKey: 'puntaPaloma' },
+  { id: 976270, name: 'Campo de Fútbol', nameKey: 'campoDeFutbol' },
 ];
