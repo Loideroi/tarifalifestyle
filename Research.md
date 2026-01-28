@@ -336,27 +336,35 @@ defineType({
 
 **Tarifa Spot IDs:**
 
-| Spot | ID | URL |
-|------|-----|-----|
-| Tarifa (General) | 43 | windguru.cz/43 |
-| Los Lances Tarifa | 458886 | windguru.cz/458886 |
-| Valdevaqueros | 541946 | windguru.cz/541946 |
-| Punta Paloma | 13586 | windguru.cz/13586 |
+| Spot | ID | URL | Status |
+|------|-----|-----|--------|
+| Tarifa (General) | 43 | windguru.cz/43 | Reference only |
+| Los Lances | 48776 | windguru.cz/48776 | Active (updated from 458886) |
+| Valdevaqueros | 541946 | windguru.cz/541946 | Active |
+| Campo de Fútbol | 976270 | windguru.cz/976270 | Active (replaced Punta Paloma 13586) |
 
-**Embed Code:**
+**Embed Code (updated Phase 7.2):**
 ```html
-<script id="wg_fwdg_458886_3_tarifa">
+<script id="wg_fwdg_48776_100_tarifa">
 (function (window, document) {
   var loader = function () {
     var arg = [
-      "s=458886",
-      "m=3",
-      "uid=wg_fwdg_458886_3_tarifa",
+      "s=48776",
+      "m=100",
+      "uid=wg_fwdg_48776_100_tarifa",
       "wj=knots",
       "tj=c",
       "fhours=240",
       "lng=en",
-      "p=WINDSPD,GUST,SMER,TMPE,RATING"
+      "p=WINDSPD,GUST,SMER,TMPE,FLHGT,CDC,APCP1s,RATING",
+      "ai=0",
+      "waj=m",
+      "tij=cm",
+      "odh=0",
+      "doh=24",
+      "hrsm=2",
+      "vt=forecasts",
+      "idbs=1"
     ];
     var script = document.createElement("script");
     var tag = document.getElementsByTagName("script")[0];
@@ -367,6 +375,13 @@ defineType({
 })(window, document);
 </script>
 ```
+
+**Widget parameter notes:**
+- `m=100` -- forecast model
+- `fhours=240` -- 10-day forecast window
+- `FLHGT` -- wave height, `CDC` -- cloud cover, `APCP1s` -- precipitation
+- `waj=m` -- wave units in meters, `tij=cm` -- tide units in cm
+- `hrsm=2` -- 2-hour summary intervals, `doh=24` -- 24h display offset
 
 ### Open-Meteo API (RECOMMENDED - Free)
 

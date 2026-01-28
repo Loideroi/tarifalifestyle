@@ -1,8 +1,8 @@
 # Tarifalifestyle.com - Implementation Status
 
 **Last Updated:** January 29, 2026
-**Current Phase:** Phase 7.1 (Refinements & Local News Feed) COMPLETE
-**Status:** Ready for deployment (all phases through 7.1 complete)
+**Current Phase:** Phase 7.2 (Windguru Forecast Updates) COMPLETE
+**Status:** Ready for deployment (all phases through 7.2 complete)
 
 ---
 
@@ -108,6 +108,9 @@
 | ISR revalidation | ✅ Homepage revalidates every 30 minutes |
 | Directory partners | ✅ Original partners restored + Numero C, La Casa de la Luz, Tarifa Day Care added |
 | News translations | ✅ All 7 locale files updated |
+| Windguru spots | ✅ Los Lances (48776), Valdevaqueros (541946), Campo de Fútbol (976270) |
+| Windguru forecast | ✅ 10-day (240h) with wave height, cloud cover, precipitation |
+| Spot translations | ✅ "campoDeFutbol" key in all 7 locale files |
 
 ---
 
@@ -153,6 +156,18 @@
 - [x] Restored original local partners accidentally removed in Phase 7: Cafe Azul, Tarifa Language Academy, The Tax Point, Casa Tarifa Rentals, Chiringuito El Pirata
 - [x] Competitors excluded: no other kite schools (Freeride, Spin Out), no other coworking (La Cocotera)
 - [x] News translations added to all 7 language files (en, es, nl, de, fr, it, pt)
+
+### Phase 7.2: Windguru Forecast Updates ✅ COMPLETE
+
+- [x] Los Lances spot ID changed from `458886` to `48776`
+- [x] Valdevaqueros kept at `541946` (unchanged)
+- [x] Punta Paloma (`13586`) replaced with Campo de Fútbol (`976270`)
+- [x] Widget model changed from `m=3` to `m=100`
+- [x] Forecast extended from 168h (7-day) to 240h (10-day)
+- [x] Added wave height (`FLHGT`), cloud cover (`CDC`), and precipitation (`APCP1s`) data fields
+- [x] Additional widget params: `ai=0`, `waj=m`, `tij=cm`, `odh=0`, `doh=24`, `hrsm=2`, `vt=forecasts`, `idbs=1`
+- [x] `"puntaPaloma"` translation key replaced with `"campoDeFutbol"` in all 7 locale files
+- [x] Files changed: `WindguruEmbed.tsx`, `types.ts`, all 7 locale JSON files
 
 ---
 

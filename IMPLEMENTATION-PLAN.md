@@ -759,9 +759,9 @@ interface WindguruEmbedProps {
 }
 
 const SPOT_IDS = {
-  losLances: 458886,
+  losLances: 48776,
   valdevaqueros: 541946,
-  puntaPaloma: 13586,
+  campoDeFutbol: 976270,
 };
 
 export function WindguruEmbed({ spotId, language = 'en' }: WindguruEmbedProps) {
@@ -779,13 +779,21 @@ export function WindguruEmbed({ spotId, language = 'en' }: WindguruEmbedProps) {
         var loader = function () {
           var arg = [
             "s=${spotId}",
-            "m=3",
+            "m=100",
             "uid=${uid}",
             "wj=knots",
             "tj=c",
-            "fhours=168",
+            "fhours=240",
             "lng=${language}",
-            "p=WINDSPD,GUST,SMER,TMPE,RATING"
+            "p=WINDSPD,GUST,SMER,TMPE,FLHGT,CDC,APCP1s,RATING",
+            "ai=0",
+            "waj=m",
+            "tij=cm",
+            "odh=0",
+            "doh=24",
+            "hrsm=2",
+            "vt=forecasts",
+            "idbs=1"
           ];
           var s = document.createElement("script");
           var tag = document.getElementsByTagName("script")[0];
@@ -1024,9 +1032,9 @@ describe('Phase 4: Integrations', () => {
     "spots": {
       "losLances": "Los Lances",
       "valdevaqueros": "Valdevaqueros",
-      "puntaPaloma": "Punta Paloma"
+      "campoDeFutbol": "Campo de Fútbol"
     },
-    "forecast": "7-Day Forecast",
+    "forecast": "10-Day Forecast",
     "beachCam": "Beach Cam",
     "windguru": "Windguru Forecast"
   },
@@ -1226,8 +1234,8 @@ vercel --prod
 ## 9. Phase 7: Post-MVP Refinements
 
 **Goal:** Polish and refine the shipped MVP based on real usage and priorities
-**Status:** Complete
-**Date:** January 28, 2026
+**Status:** Complete (through 7.2)
+**Date:** January 29, 2026
 
 ### 7.1 Favicon & PWA
 
@@ -1341,6 +1349,44 @@ vercel --prod
 - [x] Cafe Azul, Tarifa Language Academy, The Tax Point, Casa Tarifa Rentals, Chiringuito El Pirata all present in directory
 - [x] No competitor listings (Freeride, Spin Out, La Cocotera)
 - [x] News translations present in all 7 locale files
+- [x] Build passes with all changes
+
+### Phase 7.2: Windguru Forecast Updates
+
+**Goal:** Update Windguru spots and widget parameters for more accurate, extended forecasts
+**Status:** Complete
+**Date:** January 29, 2026
+
+#### 7.2.1 Windguru Spot Changes
+
+- [x] Los Lances spot ID changed from `458886` to `48776`
+- [x] Valdevaqueros kept at `541946` (unchanged)
+- [x] Punta Paloma (`13586`) replaced with Campo de Fútbol (`976270`)
+
+#### 7.2.2 Widget Parameter Updates
+
+- [x] Model changed from `m=3` to `m=100`
+- [x] Forecast window extended from 168h (7-day) to 240h (10-day) via `fhours=240`
+- [x] Added wave height (`FLHGT`), cloud cover (`CDC`), and precipitation (`APCP1s`) to data fields
+- [x] Additional params: `ai=0`, `waj=m`, `tij=cm`, `odh=0`, `doh=24`, `hrsm=2`, `vt=forecasts`, `idbs=1`
+
+#### 7.2.3 Translation Updates
+
+- [x] `"puntaPaloma"` key replaced with `"campoDeFutbol"` in all 7 locale files (en, es, nl, de, fr, it, pt)
+
+#### 7.2.4 Files Changed
+
+- `src/components/weather/WindguruEmbed.tsx` -- spot IDs, widget params, spot key rename
+- `src/types/types.ts` -- spot type updated
+- `src/messages/en.json`, `es.json`, `nl.json`, `de.json`, `fr.json`, `it.json`, `pt.json` -- translation key rename
+
+#### Phase 7.2 Quality Gate
+
+- [x] Windguru widget loads with new spot IDs (48776, 541946, 976270)
+- [x] Forecast shows 10-day (240h) window
+- [x] Wave height, cloud cover, and precipitation visible in widget
+- [x] "Campo de Futbol" appears as spot name in all 7 locales
+- [x] No references to "Punta Paloma" or old spot ID 458886/13586 remain in code
 - [x] Build passes with all changes
 
 ---
@@ -1635,6 +1681,17 @@ Stream D: Sanity Schemas
 | Original partners restored | Cafe Azul, Tarifa Language Academy, The Tax Point, Casa Tarifa Rentals, Chiringuito El Pirata |
 | No competitors listed | No Freeride, Spin Out, La Cocotera |
 | News translations | All 7 locale files updated |
+
+### Gate 7.2: Windguru Forecast Updates
+
+| Requirement | Verification |
+|-------------|--------------|
+| Spot IDs updated | Los Lances=48776, Valdevaqueros=541946, Campo de Futbol=976270 |
+| Model updated | Widget uses m=100 |
+| Forecast extended | 240h (10-day) window |
+| Extra data fields | Wave height (FLHGT), cloud cover (CDC), precipitation (APCP1s) visible |
+| Translation key renamed | "campoDeFutbol" in all 7 locale files |
+| No stale references | No "puntaPaloma", 458886, or 13586 in codebase |
 
 ---
 

@@ -1,6 +1,6 @@
 # Tarifalifestyle.com - Compact PRD
 
-**Updated:** January 29, 2026 (Phase 7.1 updates applied)
+**Updated:** January 29, 2026 (Phase 7.2 updates applied)
 
 ## Overview
 
@@ -131,9 +131,9 @@ SHOPIFY_STORE=tarifairforce.com
 
 ### Weather/Wind Widgets
 
-| Service | Type | Spot IDs |
-|---------|------|----------|
-| **Windguru** | Widget embed | 458886 (Los Lances), 541946 (Valdevaqueros) |
+| Service | Type | Spot IDs / Config |
+|---------|------|-------------------|
+| **Windguru** | Widget embed | 48776 (Los Lances), 541946 (Valdevaqueros), 976270 (Campo de Fútbol) -- model m=100, 240h (10-day), includes wave/cloud/precip |
 | **Open-Meteo** | API (free) | Lat: 36.014, Lon: -5.604 |
 | **Windy.com** | Map + webcam | Embed URL available |
 
@@ -159,7 +159,7 @@ SHOPIFY_STORE=tarifairforce.com
 - [ ] Identify products to feature
 
 ### Weather/Conditions ✅ COMPLETE
-- [x] Windguru: Spot IDs 458886 (Los Lances), 541946 (Valdevaqueros)
+- [x] Windguru: Spot IDs 48776 (Los Lances), 541946 (Valdevaqueros), 976270 (Campo de Fútbol) -- model m=100, 240h/10-day forecast, wave/cloud/precip data
 - [x] **Open-Meteo API** (free, no key) - RECOMMENDED
 - [x] Windy.com embed for visual maps
 - [x] Beach cams via Windy webcams
