@@ -3,7 +3,21 @@ import {
   searchProducts,
   getFeaturedProducts,
   listMCPTools,
+  parseMCPTextContent,
 } from '@/lib/shopify/mcp-client';
+import type { MCPSearchResult } from '@/lib/shopify/types';
+
+/**
+ * Parse an MCP result and return structured product data.
+ * Falls back to an empty products array if parsing fails.
+ */
+function toProductResponse(result: MCPSearchResult) {
+  const parsed = parseMCPTextContent(result);
+  if (parsed) {
+    return parsed;
+  }
+  return { products: [], pagination: null, available_filters: [] };
+}
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
@@ -22,28 +36,26 @@ export async function GET(request: NextRequest) {
       const result = await getFeaturedProducts();
       if (!result) {
         return NextResponse.json(
-          { error: 'Failed to fetch featured products' },
-          { status: 500 }
+          { products: [], pagination: null, available_filters: [] }
         );
       }
-      return NextResponse.json(result);
+      return NextResponse.json(toProductResponse(result));
     }
 
     // Search products by query
     if (query) {
       const result = await searchProducts(query);
-      return NextResponse.json(result);
+      return NextResponse.json(toProductResponse(result));
     }
 
     // Default: return featured products
     const result = await getFeaturedProducts();
     if (!result) {
       return NextResponse.json(
-        { error: 'Failed to fetch products' },
-        { status: 500 }
+        { products: [], pagination: null, available_filters: [] }
       );
     }
-    return NextResponse.json(result);
+    return NextResponse.json(toProductResponse(result));
   } catch (error) {
     console.error('Shopify API error:', error);
     return NextResponse.json(
@@ -69,7 +81,7 @@ export async function POST(request: NextRequest) {
     }
 
     const result = await searchProducts(query, context);
-    return NextResponse.json(result);
+    return NextResponse.json(toProductResponse(result));
   } catch (error) {
     console.error('Shopify API error:', error);
     return NextResponse.json(

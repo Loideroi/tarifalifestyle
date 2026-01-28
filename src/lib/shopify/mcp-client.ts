@@ -3,6 +3,7 @@ import type {
   MCPResponse,
   MCPToolsListResult,
   MCPSearchResult,
+  MCPParsedResponse,
   ShopifyProduct,
 } from './types';
 
@@ -72,20 +73,33 @@ export async function searchProducts(
 }
 
 /**
+ * Parse the JSON text content from an MCP search result into structured data.
+ * The MCP returns content[0].text as a JSON string with products, pagination, etc.
+ */
+export function parseMCPTextContent(
+  result: MCPSearchResult
+): MCPParsedResponse | null {
+  if (!result.content || result.content.length === 0) {
+    return null;
+  }
+
+  try {
+    const text = result.content[0].text;
+    const parsed = JSON.parse(text) as MCPParsedResponse;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Parse products from MCP search result text
  * The MCP returns product info as formatted text, this extracts structured data
  */
 export function parseProductsFromMCPResult(
   result: MCPSearchResult
 ): ShopifyProduct[] {
-  if (!result.content || result.content.length === 0) {
-    return [];
-  }
-
-  // The MCP returns text content - parsing depends on actual response format
-  // For now, return empty array and rely on the raw text display
-  // TODO: Implement proper parsing once MCP response format is confirmed
-
+  // Legacy function kept for compatibility - prefer parseMCPTextContent()
   return [];
 }
 

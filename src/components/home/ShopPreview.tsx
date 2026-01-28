@@ -5,8 +5,15 @@ import { Button } from '@/components/ui/button';
 import { ShoppingBag, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { LoadingCard } from '@/components/common/LoadingSpinner';
+import { ProductCard } from '@/components/shop/ProductCard';
+import { ProductGrid } from '@/components/shop/ProductGrid';
 import { getStoreUrl } from '@/lib/shopify/mcp-client';
-import type { MCPSearchResult } from '@/lib/shopify/types';
+import type { MCPParsedResponse } from '@/lib/shopify/types';
+
+function extractHandle(url: string): string {
+  const match = url.match(/\/products\/(.+?)(?:\?|$)/);
+  return match?.[1] || '';
+}
 
 interface ShopPreviewProps {
   title?: string;
@@ -19,7 +26,7 @@ export function ShopPreview({
   subtitle = 'Beach lifestyle essentials from Tarifa Air Force',
   viewStoreLabel = 'Visit Store',
 }: ShopPreviewProps) {
-  const [data, setData] = useState<MCPSearchResult | null>(null);
+  const [data, setData] = useState<MCPParsedResponse | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -27,7 +34,7 @@ export function ShopPreview({
       try {
         const response = await fetch('/api/shopify/products?action=featured');
         if (!response.ok) throw new Error('Failed to fetch');
-        const result = await response.json();
+        const result: MCPParsedResponse = await response.json();
         setData(result);
       } catch {
         // Silently fail - show placeholder cards
@@ -40,6 +47,8 @@ export function ShopPreview({
   }, []);
 
   const storeUrl = getStoreUrl();
+  const products = data?.products ?? [];
+  const hasProducts = products.length > 0;
 
   return (
     <section className="py-16">
@@ -57,16 +66,26 @@ export function ShopPreview({
               <LoadingCard key={i} className="aspect-square" />
             ))}
           </div>
-        ) : data?.content ? (
-          <div className="rounded-lg border border-sand-200 bg-sand-50 p-6">
-            <div className="prose prose-sm max-w-none text-driftwood-600">
-              {data.content.map((item, idx) => (
-                <p key={idx} className="whitespace-pre-wrap">
-                  {item.text}
-                </p>
-              ))}
-            </div>
-          </div>
+        ) : hasProducts ? (
+          <ProductGrid columns={4}>
+            {products.slice(0, 4).map((product) => {
+              const handle = extractHandle(product.url);
+              const hasAvailableVariant = product.variants.some((v) => v.available);
+              return (
+                <ProductCard
+                  key={product.product_id}
+                  title={product.title}
+                  handle={handle}
+                  price={product.price_range.min}
+                  currency={product.price_range.currency}
+                  imageUrl={product.image_url}
+                  imageAlt={product.image_alt_text}
+                  tags={product.tags.slice(0, 2)}
+                  available={hasAvailableVariant}
+                />
+              );
+            })}
+          </ProductGrid>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[1, 2, 3, 4].map((i) => (

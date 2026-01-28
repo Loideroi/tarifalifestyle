@@ -9,14 +9,21 @@ import { LoadingSpinner } from '@/components/common/LoadingSpinner';
 import { ErrorDisplay } from '@/components/common/ErrorBoundary';
 import { SearchBar } from '@/components/shop/SearchBar';
 import { CategoryFilter } from '@/components/shop/CategoryFilter';
+import { ProductCard } from '@/components/shop/ProductCard';
+import { ProductGrid } from '@/components/shop/ProductGrid';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, ShoppingBag } from 'lucide-react';
 import { getStoreUrl } from '@/lib/shopify/mcp-client';
-import type { MCPSearchResult } from '@/lib/shopify/types';
+import type { MCPParsedResponse } from '@/lib/shopify/types';
+
+function extractHandle(url: string): string {
+  const match = url.match(/\/products\/(.+?)(?:\?|$)/);
+  return match?.[1] || '';
+}
 
 export default function ShopPage() {
   const t = useTranslations('Shop');
-  const [searchResult, setSearchResult] = useState<MCPSearchResult | null>(null);
+  const [searchResult, setSearchResult] = useState<MCPParsedResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState('all');
@@ -50,7 +57,7 @@ export default function ShopPage() {
 
         if (!response.ok) throw new Error('Search failed');
 
-        const data = await response.json();
+        const data: MCPParsedResponse = await response.json();
         setSearchResult(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Search failed');
@@ -75,6 +82,8 @@ export default function ShopPage() {
   );
 
   const storeUrl = getStoreUrl();
+  const products = searchResult?.products ?? [];
+  const hasProducts = products.length > 0;
 
   return (
     <>
@@ -117,20 +126,30 @@ export default function ShopPage() {
           )}
 
           {/* Results */}
-          {!loading && !error && hasSearched && searchResult?.content && (
-            <div className="rounded-lg border border-sand-200 bg-sand-50 p-6">
-              <div className="prose prose-sm max-w-none text-driftwood-600">
-                {searchResult.content.map((item, idx) => (
-                  <p key={idx} className="whitespace-pre-wrap">
-                    {item.text}
-                  </p>
-                ))}
-              </div>
-            </div>
+          {!loading && !error && hasSearched && hasProducts && (
+            <ProductGrid columns={4}>
+              {products.map((product) => {
+                const handle = extractHandle(product.url);
+                const hasAvailableVariant = product.variants.some((v) => v.available);
+                return (
+                  <ProductCard
+                    key={product.product_id}
+                    title={product.title}
+                    handle={handle}
+                    price={product.price_range.min}
+                    currency={product.price_range.currency}
+                    imageUrl={product.image_url}
+                    imageAlt={product.image_alt_text}
+                    tags={product.tags.slice(0, 2)}
+                    available={hasAvailableVariant}
+                  />
+                );
+              })}
+            </ProductGrid>
           )}
 
           {/* No results */}
-          {!loading && !error && hasSearched && !searchResult?.content?.length && (
+          {!loading && !error && hasSearched && !hasProducts && (
             <div className="flex flex-col items-center justify-center py-16 text-center">
               <ShoppingBag className="mb-4 h-12 w-12 text-sand-300" />
               <p className="text-driftwood-500">{t('noProducts')}</p>

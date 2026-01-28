@@ -110,3 +110,52 @@ export interface MCPSearchResult {
     text: string;
   }>;
 }
+
+// Product data as returned inside the MCP text content JSON
+export interface MCPProduct {
+  product_id: string;
+  title: string;
+  description: string;
+  url: string;
+  image_url: string;
+  image_alt_text: string;
+  price_range: {
+    min: string;
+    max: string;
+    currency: string;
+  };
+  product_type: string;
+  tags: string[];
+  variants: Array<{
+    variant_id: string;
+    title: string;
+    price: string;
+    currency: string;
+    image_url: string;
+    available: boolean;
+  }>;
+}
+
+export interface MCPParsedResponse {
+  products: MCPProduct[];
+  pagination: {
+    hasNextPage: boolean;
+    hasPreviousPage: boolean;
+    startCursor: string | null;
+    endCursor: string | null;
+    currentPage: number;
+    nextPage: number | null;
+    maxPages: number;
+    limitReached: boolean;
+  };
+  available_filters: Array<{
+    label: string;
+    values: {
+      label: string[];
+      input_options: Array<{
+        label: string;
+        input: Record<string, unknown>;
+      }>;
+    };
+  }>;
+}
