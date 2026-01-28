@@ -10,8 +10,9 @@ import { PartnerGrid } from '@/components/partners/PartnerGrid';
 import { CategoryFilter } from '@/components/shop/CategoryFilter';
 import { Building2 } from 'lucide-react';
 
-// Partner data - promoted businesses
+// Partner data - promoted partners (featured) + local businesses
 const PARTNERS = [
+  // === Promoted partners (featured, no competition) ===
   {
     name: 'TAF Coworking',
     slug: 'taf-coworking',
@@ -66,6 +67,79 @@ const PARTNERS = [
     website: 'https://tarifairforce.com',
     address: 'Tarifa',
     featured: true,
+  },
+  // === Local businesses ===
+  {
+    name: 'Espresso Bar Número C',
+    slug: 'numero-c',
+    description: 'Great coffee and a favourite meeting spot for expats. Perfect place to work, socialise, and feel at home in Tarifa.',
+    category: 'food',
+    address: 'Tarifa',
+    featured: false,
+  },
+  {
+    name: 'La Casa de la Luz',
+    slug: 'la-casa-de-la-luz',
+    description: 'International school in Tarifa for ages 3-12. Montessori/Wild-based philosophy with small class sizes and NEASC accreditation.',
+    category: 'education',
+    website: 'https://www.lacasadelaluztarifa.com',
+    address: 'Tarifa',
+    featured: false,
+  },
+  {
+    name: 'Tarifa Day Care',
+    slug: 'tarifa-day-care',
+    description: 'Excellent and affordable day care in Tarifa. A safe and nurturing environment for your little ones.',
+    category: 'education',
+    address: 'Tarifa',
+    featured: false,
+  },
+  {
+    name: 'Cafe Azul',
+    slug: 'cafe-azul',
+    description: 'Charming beachfront restaurant serving fresh seafood, tapas, and traditional Andalusian cuisine.',
+    category: 'food',
+    phone: '+34 956 68 43 21',
+    address: 'Paseo Alameda',
+    featured: false,
+  },
+  {
+    name: 'Tarifa Language Academy',
+    slug: 'tarifa-language-academy',
+    description: 'Learn Spanish with immersive classes, cultural activities, and experienced native teachers.',
+    category: 'education',
+    phone: '+34 956 68 98 76',
+    website: 'https://tarifaspanish.com',
+    address: 'Calle Batalla del Salado',
+    featured: false,
+  },
+  {
+    name: 'The Tax Point',
+    slug: 'the-tax-point',
+    description: 'Tax advisory and business consulting for expats. NIE applications, company formation, and tax returns.',
+    category: 'services',
+    phone: '+34 956 68 11 22',
+    address: 'Calle Santísima Trinidad',
+    featured: false,
+  },
+  {
+    name: 'Casa Tarifa Rentals',
+    slug: 'casa-tarifa',
+    description: 'Long-term and holiday rental properties throughout Tarifa. From beachfront apartments to old town houses.',
+    category: 'accommodation',
+    phone: '+34 956 68 77 88',
+    website: 'https://casatarifa.com',
+    address: 'Calle Nuestra Señora de la Luz',
+    featured: false,
+  },
+  {
+    name: 'Chiringuito El Pirata',
+    slug: 'chiringuito-el-pirata',
+    description: 'Beach bar on Los Lances with fresh fish, cold drinks, and the best sunset views in Tarifa.',
+    category: 'food',
+    phone: '+34 660 98 76 54',
+    address: 'Playa de Los Lances',
+    featured: false,
   },
 ];
 

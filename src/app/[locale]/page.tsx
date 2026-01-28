@@ -1,10 +1,11 @@
 import { useTranslations } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { HeroCarousel } from '@/components/home/HeroCarousel';
 import { QuickLinks } from '@/components/home/QuickLinks';
 import { ConditionsWidget } from '@/components/home/ConditionsWidget';
 import { ShopPreview } from '@/components/home/ShopPreview';
 import { PartnerSpotlight } from '@/components/home/PartnerSpotlight';
+import { LocalNews } from '@/components/home/LocalNews';
 import { WaveDivider } from '@/components/common/WaveDivider';
 
 type Props = {
@@ -14,6 +15,7 @@ type Props = {
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations('Home.news');
 
   return (
     <>
@@ -24,6 +26,11 @@ export default async function HomePage({ params }: Props) {
       <ShopSection />
       <WaveDivider color="sand" flip />
       <PartnersSection />
+      <LocalNews
+        title={t('title')}
+        subtitle={t('subtitle')}
+        locale={locale}
+      />
     </>
   );
 }

@@ -1292,6 +1292,57 @@ vercel --prod
 - [x] Sevilla airport listed on about page
 - [x] Build passes with all changes
 
+### Phase 7.1: Refinements & Local News Feed
+
+**Goal:** Fix UI bugs, implement local news feed, expand directory with local partners and education listings
+**Status:** Complete
+**Date:** January 29, 2026
+
+#### 7.1.1 Hero Button Fix
+
+- [x] "Check Conditions" button on hero had white text on white background (outline variant used `bg-background`)
+- [x] Added `bg-transparent` class to override and restore proper contrast
+
+#### 7.1.2 Local News Feed (Homepage)
+
+- [x] New `LocalNews` server component renders RSS data from ciudaddetarifaalminuto.com on the homepage
+- [x] Uses existing RSS client (`src/lib/rss/tarifa-news.ts`) -- no new API integration needed
+- [x] Shows 4 latest news items in a responsive 2-column grid
+- [x] Homepage now uses ISR with 30-minute revalidation (`revalidate = 1800`)
+
+#### 7.1.3 Directory Additions
+
+- [x] Added **Espresso Bar Numero C** (food category) -- popular expat meeting spot
+- [x] Added **La Casa de la Luz** international school (education, https://www.lacasadelaluztarifa.com)
+- [x] Added **Tarifa Day Care** (education, affordable day care)
+
+#### 7.1.4 Directory Restorations
+
+- [x] Restored original local partners that were accidentally removed in Phase 7:
+  - Cafe Azul
+  - Tarifa Language Academy
+  - The Tax Point
+  - Casa Tarifa Rentals
+  - Chiringuito El Pirata
+- [x] Competitors excluded from directory: no other kite schools (Freeride, Spin Out), no other coworking (La Cocotera)
+
+#### 7.1.5 News Translations
+
+- [x] Added news-related translation keys to all 7 language files (en, es, nl, de, fr, it, pt)
+
+#### Phase 7.1 Quality Gate
+
+- [x] Hero "Check Conditions" button is visible and readable on all backgrounds
+- [x] Local news feed renders on homepage with 4 articles
+- [x] Homepage revalidates every 30 minutes (ISR)
+- [x] Espresso Bar Numero C appears in directory under food category
+- [x] La Casa de la Luz appears in directory under education category
+- [x] Tarifa Day Care appears in directory under education category
+- [x] Cafe Azul, Tarifa Language Academy, The Tax Point, Casa Tarifa Rentals, Chiringuito El Pirata all present in directory
+- [x] No competitor listings (Freeride, Spin Out, La Cocotera)
+- [x] News translations present in all 7 locale files
+- [x] Build passes with all changes
+
 ---
 
 ## 10. Test Cases
@@ -1570,6 +1621,20 @@ Stream D: Sanity Schemas
 | Partner spotlight | 6 promoted businesses shown |
 | About page updated | Positive cons, Sevilla airport |
 | Kite gear banner | Visible on fashion/shop page |
+
+### Gate 7.1: Refinements & Local News Feed
+
+| Requirement | Verification |
+|-------------|--------------|
+| Hero button readable | "Check Conditions" visible on hero bg |
+| Local news feed live | 4 articles from ciudaddetarifaalminuto.com on homepage |
+| ISR active | Homepage revalidates every 30 minutes |
+| Numero C in directory | Listed under food category |
+| La Casa de la Luz in directory | Listed under education category |
+| Tarifa Day Care in directory | Listed under education category |
+| Original partners restored | Cafe Azul, Tarifa Language Academy, The Tax Point, Casa Tarifa Rentals, Chiringuito El Pirata |
+| No competitors listed | No Freeride, Spin Out, La Cocotera |
+| News translations | All 7 locale files updated |
 
 ---
 

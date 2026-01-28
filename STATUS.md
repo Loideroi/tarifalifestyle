@@ -1,8 +1,8 @@
 # Tarifalifestyle.com - Implementation Status
 
-**Last Updated:** January 28, 2026
-**Current Phase:** Phase 7 (Post-MVP Refinements) COMPLETE
-**Status:** Ready for deployment (all 7 phases complete)
+**Last Updated:** January 29, 2026
+**Current Phase:** Phase 7.1 (Refinements & Local News Feed) COMPLETE
+**Status:** Ready for deployment (all phases through 7.1 complete)
 
 ---
 
@@ -103,13 +103,18 @@
 | No social links | ✅ Removed from footer |
 | Navigation | ✅ "Fashion" tab, no orange shop button |
 | Partner spotlight | ✅ 6 promoted businesses |
+| Hero button | ✅ "Check Conditions" visible with bg-transparent fix |
+| Local news feed | ✅ 4 articles on homepage via LocalNews component |
+| ISR revalidation | ✅ Homepage revalidates every 30 minutes |
+| Directory partners | ✅ Original partners restored + Numero C, La Casa de la Luz, Tarifa Day Care added |
+| News translations | ✅ All 7 locale files updated |
 
 ---
 
 ## Routes
 
 ```
-/[locale]                    Homepage (no newsletter, quick links -> /about)
+/[locale]                    Homepage (local news feed, no newsletter, quick links -> /about, ISR 30min)
 /[locale]/about              About Tarifa (positive cons, Sevilla airport)
 /[locale]/conditions         Live wind/weather conditions
 /[locale]/shop               Fashion / Shopify MCP product search + kite gear promo
@@ -136,6 +141,19 @@
 - [x] Directory and Partner Spotlight updated with promoted businesses: TAF Coworking, Tarifa Kite Repair, Explora Watersports, Stoked Surf Bar, Surfr App, Tarifa Air Force
 - [x] RSS client for local news exists (`src/lib/rss/tarifa-news.ts`) but not yet displayed on pages
 
+### Phase 7.1: Refinements & Local News Feed ✅ COMPLETE
+
+- [x] Hero "Check Conditions" button fix -- white text on white bg resolved with `bg-transparent` override
+- [x] Local news feed implemented on homepage -- `LocalNews` server component using existing RSS client
+- [x] Homepage shows 4 latest news items from ciudaddetarifaalminuto.com in 2-column grid
+- [x] Homepage now uses ISR with 30-minute revalidation (`revalidate = 1800`)
+- [x] Espresso Bar Numero C added to directory (food category, popular expat meeting spot)
+- [x] La Casa de la Luz international school added to directory (education, https://www.lacasadelaluztarifa.com)
+- [x] Tarifa Day Care added to directory (education, affordable day care)
+- [x] Restored original local partners accidentally removed in Phase 7: Cafe Azul, Tarifa Language Academy, The Tax Point, Casa Tarifa Rentals, Chiringuito El Pirata
+- [x] Competitors excluded: no other kite schools (Freeride, Spin Out), no other coworking (La Cocotera)
+- [x] News translations added to all 7 language files (en, es, nl, de, fr, it, pt)
+
 ---
 
 ## Next Steps (Post-MVP)
@@ -145,8 +163,8 @@
 3. **Sanity Content** - Migrate sample partner data to CMS
 4. **Guide Pages** - Create guides hub and detail pages with Sanity content
 5. **Lifestyle & Community Pages** - Build remaining page content
-6. **Local News Feed UI** - Display RSS data from `src/lib/rss/tarifa-news.ts` on homepage or community page
-7. **Remaining Translations** - Complete de, fr, it, pt translations
+6. ~~Local News Feed UI~~ ✅ Live on homepage (LocalNews component, ISR 30min)
+7. **Remaining Translations** - Complete de, fr, it, pt translations (news keys done)
 8. **Vercel Deployment** - Deploy to production
 9. **Analytics** - Add Google Analytics / Sentry
 10. **Performance** - Lighthouse optimization pass

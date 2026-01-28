@@ -1,6 +1,6 @@
 # Tarifalifestyle.com - Compact PRD
 
-**Updated:** January 28, 2026 (Phase 7 updates applied)
+**Updated:** January 29, 2026 (Phase 7.1 updates applied)
 
 ## Overview
 
@@ -41,7 +41,7 @@ Analytics:    GA4 + Vercel Analytics
 
 | Page | Purpose |
 |------|---------|
-| `/` | Hero, conditions, fashion preview, partners (no newsletter) |
+| `/` | Hero, conditions, fashion preview, partners, local news feed (ISR 30min, no newsletter) |
 | `/about` | Tarifa intro, cost of living, pros/cons (positive spin), airports (incl. Sevilla 2h) |
 | `/conditions` | Live wind/weather/beach cams |
 | `/fashion` | Tarifa Air Force products + kite gear promo banner (renamed from "Shop") |
@@ -120,8 +120,14 @@ SHOPIFY_STORE=tarifairforce.com
 | Stoked Surf Bar | Google Maps | Profile + Glovo | Promoted |
 | Surfr App | App stores | Download links | Promoted |
 | La Casa de la Luz | lacasadelaluztarifa.com | Contact form | lighthouse@... |
-| **Ciudad de Tarifa** | ciudaddetarifaalminuto.com | **RSS feed (client exists, not displayed)** | - |
-| Daycare | maps.app.goo.gl/VSRcZ31MSjEwKCuW7 | Map embed | - |
+| Cafe Azul | - | Profile card | Restored |
+| Tarifa Language Academy | - | Profile card | Restored |
+| The Tax Point | - | Profile card | Restored |
+| Casa Tarifa Rentals | - | Profile card | Restored |
+| Chiringuito El Pirata | - | Profile card | Restored |
+| Espresso Bar Numero C | - | Profile card (food) | New in 7.1 |
+| Tarifa Day Care | - | Map embed (education) | New in 7.1 |
+| **Ciudad de Tarifa** | ciudaddetarifaalminuto.com | **RSS feed -- live on homepage (LocalNews component)** | - |
 
 ### Weather/Wind Widgets
 
@@ -198,14 +204,13 @@ SHOPIFY_STORE=tarifairforce.com
 
 **Nice to Have:**
 - All 7 languages
-- News feed integration
+- ~~News feed integration~~ ✅ Live on homepage (Phase 7.1)
 - Event calendar
 
 **Post-MVP:**
 - User accounts
 - Reviews/ratings
 - PWA features (manifest already created)
-- Local news feed display (RSS client exists, needs UI)
 
 ---
 

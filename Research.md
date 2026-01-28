@@ -514,6 +514,22 @@ export async function getWindForecast() {
 
 **Integration:** RSS feed for news headlines
 
+### Espresso Bar Numero C
+
+**Category:** Food & Drink
+
+**Why included:** Popular meeting spot for expats and locals. Great coffee, relaxed atmosphere in the old town. Recommended for newcomers looking to connect with the expat community.
+
+**Integration:** Profile card in directory (food category)
+
+### Tarifa Day Care
+
+**Category:** Education
+
+**Why included:** Affordable day care option for expat families. Fills a gap for parents who need childcare but don't require a full international school.
+
+**Integration:** Profile card in directory (education category), map embed
+
 ### Promoted Partners (Directory & Partner Spotlight)
 
 The following businesses are actively promoted in the Directory page and Partner Spotlight component:
@@ -526,8 +542,17 @@ The following businesses are actively promoted in the Directory page and Partner
 | Explora Watersports | Booking widget + WhatsApp | Yes |
 | Stoked Surf Bar | Profile + Glovo link | Yes |
 | Surfr App | App store download links | Yes |
-| La Casa de la Luz | Contact form + info | Not yet |
-| Ciudad de Tarifa | **RSS feed** (client exists, not displayed on pages) | N/A |
+| La Casa de la Luz | Contact form + info (education) | Yes (Phase 7.1) |
+| Tarifa Day Care | Profile + map embed (education) | Yes (Phase 7.1) |
+| Espresso Bar Numero C | Profile card (food) | Yes (Phase 7.1) |
+| Cafe Azul | Profile card | Restored (Phase 7.1) |
+| Tarifa Language Academy | Profile card | Restored (Phase 7.1) |
+| The Tax Point | Profile card | Restored (Phase 7.1) |
+| Casa Tarifa Rentals | Profile card | Restored (Phase 7.1) |
+| Chiringuito El Pirata | Profile card | Restored (Phase 7.1) |
+| Ciudad de Tarifa | **RSS feed -- live on homepage** (LocalNews component, ISR 30min) | N/A |
+
+**Excluded competitors:** Freeride Tarifa (kite school), Spin Out Tarifa (kite school), La Cocotera (coworking)
 
 ---
 

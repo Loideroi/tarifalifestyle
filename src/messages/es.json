@@ -62,6 +62,10 @@
       "healthcare": "Sanidad",
       "schools": "Escuelas",
       "coworking": "Coworking"
+    },
+    "news": {
+      "title": "Noticias Locales",
+      "subtitle": "Lo último de Tarifa"
     }
   },
   "Conditions": {

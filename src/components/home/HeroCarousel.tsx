@@ -104,7 +104,7 @@ export function HeroCarousel({
             asChild
             size="lg"
             variant="outline"
-            className="border-white text-white hover:bg-white/10"
+            className="border-white bg-transparent text-white hover:bg-white/10"
           >
             <Link href="/conditions">
               <Wind className="mr-2 h-5 w-5" />

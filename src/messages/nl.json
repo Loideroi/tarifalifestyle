@@ -62,6 +62,10 @@
       "healthcare": "Gezondheidszorg",
       "schools": "Scholen",
       "coworking": "Coworking"
+    },
+    "news": {
+      "title": "Lokaal Nieuws",
+      "subtitle": "Het laatste uit Tarifa"
     }
   },
   "Conditions": {
