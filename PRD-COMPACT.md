@@ -1,6 +1,6 @@
 # Tarifalifestyle.com - Compact PRD
 
-**Updated:** January 28, 2026
+**Updated:** January 28, 2026 (Phase 7 updates applied)
 
 ## Overview
 
@@ -41,11 +41,11 @@ Analytics:    GA4 + Vercel Analytics
 
 | Page | Purpose |
 |------|---------|
-| `/` | Hero, conditions, shop preview, partners |
-| `/about` | Tarifa intro, cost of living, pros/cons |
+| `/` | Hero, conditions, fashion preview, partners (no newsletter) |
+| `/about` | Tarifa intro, cost of living, pros/cons (positive spin), airports (incl. Sevilla 2h) |
 | `/conditions` | Live wind/weather/beach cams |
-| `/shop` | Tarifa Air Force products |
-| `/directory` | Partner businesses with map |
+| `/fashion` | Tarifa Air Force products + kite gear promo banner (renamed from "Shop") |
+| `/directory` | Partner businesses with map, promoted spotlight |
 | `/guides/*` | Moving, healthcare, education, working |
 | `/lifestyle` | Kite spots, activities, dining |
 | `/community` | Events, news, expat stories |
@@ -113,15 +113,15 @@ SHOPIFY_STORE=tarifairforce.com
 
 | Partner | URL | Integration | Contact |
 |---------|-----|-------------|---------|
-| **Tarifa Air Force** | tarifairforce.com | **Storefront MCP** | - |
-| Tarifa Kite Repair | tarifakiterepair.com | WhatsApp chat | +34 667 97 49 25 |
-| TAF Coworking | taf-coworking.com | Quote form | +34 606 370 227 |
-| Explora Watersports | explorawatersportstarifa.com | Booking widget | +34 635 559 631 |
+| **Tarifa Air Force** | tarifairforce.com | **Storefront MCP** | Promoted |
+| Tarifa Kite Repair | tarifakiterepair.com | WhatsApp chat | Promoted |
+| TAF Coworking | taf-coworking.com | Quote form | Promoted |
+| Explora Watersports | explorawatersportstarifa.com | Booking widget | Promoted |
+| Stoked Surf Bar | Google Maps | Profile + Glovo | Promoted |
+| Surfr App | App stores | Download links | Promoted |
 | La Casa de la Luz | lacasadelaluztarifa.com | Contact form | lighthouse@... |
-| Stoked Surf Bar | Google Maps | Profile + Glovo | - |
-| **Ciudad de Tarifa** | ciudaddetarifaalminuto.com | **RSS feed** | - |
+| **Ciudad de Tarifa** | ciudaddetarifaalminuto.com | **RSS feed (client exists, not displayed)** | - |
 | Daycare | maps.app.goo.gl/VSRcZ31MSjEwKCuW7 | Map embed | - |
-| Surfr App | App stores | Download links | - |
 
 ### Weather/Wind Widgets
 
@@ -204,7 +204,8 @@ SHOPIFY_STORE=tarifairforce.com
 **Post-MVP:**
 - User accounts
 - Reviews/ratings
-- PWA features
+- PWA features (manifest already created)
+- Local news feed display (RSS client exists, needs UI)
 
 ---
 
@@ -214,8 +215,8 @@ SHOPIFY_STORE=tarifairforce.com
 |--------|---------|----------|
 | Monthly visitors | 2,000 | 10,000 |
 | Partner clicks | 200/mo | 500/mo |
-| Newsletter subs | 500 | 2,000 |
-| Shop clicks | 100/mo | 300/mo |
+| Returning visitors | 500/mo | 2,000/mo |
+| Fashion/shop clicks | 100/mo | 300/mo |
 
 ---
 
@@ -242,6 +243,9 @@ Shopify Store:    tarifairforce.com
 Shopify MCP:      https://tarifairforce.com/api/mcp (NO AUTH!)
 Deploy:           Vercel
 Tarifa Coords:    36.014, -5.604
+Favicon:          /src/app/icon.svg (wind icon SVG)
+PWA Manifest:     /src/app/manifest.ts
+Social Links:     None (Instagram/Facebook removed)
 ```
 
 **Key Docs:**

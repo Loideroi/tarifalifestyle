@@ -1,17 +1,15 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Wind, Home, Info, CloudSun, ShoppingBag, Building2, BookOpen } from 'lucide-react';
+import { Wind, Home, Info, CloudSun, ShoppingBag, Building2 } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { Button } from '@/components/ui/button';
 
 const navItems = [
   { href: '/', labelKey: 'home', icon: Home },
   { href: '/about', labelKey: 'about', icon: Info },
   { href: '/conditions', labelKey: 'conditions', icon: CloudSun },
-  { href: '/shop', labelKey: 'shop', icon: ShoppingBag },
+  { href: '/shop', labelKey: 'fashion', icon: ShoppingBag },
   { href: '/directory', labelKey: 'directory', icon: Building2 },
-  { href: '/guides', labelKey: 'guides', icon: BookOpen },
 ] as const;
 
 interface MobileNavProps {
@@ -49,16 +47,8 @@ export function MobileNav({ onClose }: MobileNavProps) {
         })}
       </nav>
 
-      {/* CTA Button */}
-      <div className="border-t pt-4">
-        <Button
-          asChild
-          className="w-full bg-sunset-400 hover:bg-sunset-500"
-          onClick={onClose}
-        >
-          <Link href="/shop">{t('shop')}</Link>
-        </Button>
-      </div>
+      {/* Bottom spacer */}
+      <div className="border-t pt-4" />
     </div>
   );
 }

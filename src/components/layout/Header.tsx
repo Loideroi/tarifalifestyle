@@ -13,9 +13,8 @@ const navItems = [
   { href: '/', labelKey: 'home' },
   { href: '/about', labelKey: 'about' },
   { href: '/conditions', labelKey: 'conditions' },
-  { href: '/shop', labelKey: 'shop' },
+  { href: '/shop', labelKey: 'fashion' },
   { href: '/directory', labelKey: 'directory' },
-  { href: '/guides', labelKey: 'guides' },
 ] as const;
 
 export function Header() {
@@ -50,9 +49,6 @@ export function Header() {
         {/* Desktop Actions */}
         <div className="hidden items-center gap-4 md:flex">
           <LanguageSwitcher />
-          <Button asChild className="bg-sunset-400 hover:bg-sunset-500">
-            <Link href="/shop">{t('shop')}</Link>
-          </Button>
         </div>
 
         {/* Mobile Menu */}

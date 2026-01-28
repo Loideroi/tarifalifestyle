@@ -28,19 +28,19 @@ export function QuickLinks({
 }: QuickLinksProps) {
   const links: QuickLink[] = [
     {
-      href: '/guides/moving',
+      href: '/about',
       icon: MapPin,
       title: movingLabel,
       color: 'text-sunset-400',
     },
     {
-      href: '/guides/healthcare',
+      href: '/about',
       icon: Sun,
       title: healthcareLabel,
       color: 'text-palm-500',
     },
     {
-      href: '/guides/education',
+      href: '/about',
       icon: BookOpen,
       title: schoolsLabel,
       color: 'text-ocean-500',

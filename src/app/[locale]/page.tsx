@@ -5,7 +5,6 @@ import { QuickLinks } from '@/components/home/QuickLinks';
 import { ConditionsWidget } from '@/components/home/ConditionsWidget';
 import { ShopPreview } from '@/components/home/ShopPreview';
 import { PartnerSpotlight } from '@/components/home/PartnerSpotlight';
-import { NewsletterSignup } from '@/components/home/NewsletterSignup';
 import { WaveDivider } from '@/components/common/WaveDivider';
 
 type Props = {
@@ -25,7 +24,6 @@ export default async function HomePage({ params }: Props) {
       <ShopSection />
       <WaveDivider color="sand" flip />
       <PartnersSection />
-      <NewsletterSection />
     </>
   );
 }
@@ -93,17 +91,3 @@ function PartnersSection() {
   );
 }
 
-function NewsletterSection() {
-  const t = useTranslations('Home.newsletter');
-
-  return (
-    <NewsletterSignup
-      title={t('title')}
-      subtitle={t('subtitle')}
-      placeholder={t('placeholder')}
-      buttonLabel={t('button')}
-      successMessage={t('success')}
-      errorMessage={t('error')}
-    />
-  );
-}

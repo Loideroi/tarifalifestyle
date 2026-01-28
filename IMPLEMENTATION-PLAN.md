@@ -16,11 +16,12 @@
 6. [Phase 4: Integrations](#6-phase-4-integrations)
 7. [Phase 5: i18n & Content](#7-phase-5-i18n--content)
 8. [Phase 6: Polish & Launch](#8-phase-6-polish--launch)
-9. [Test Cases](#9-test-cases)
-10. [Context Management Strategy](#10-context-management-strategy)
-11. [File-by-File Implementation Order](#11-file-by-file-implementation-order)
-12. [Quality Gates](#12-quality-gates)
-13. [Troubleshooting Guide](#13-troubleshooting-guide)
+9. [Phase 7: Post-MVP Refinements](#9-phase-7-post-mvp-refinements)
+10. [Test Cases](#10-test-cases)
+11. [Context Management Strategy](#11-context-management-strategy)
+12. [File-by-File Implementation Order](#12-file-by-file-implementation-order)
+13. [Quality Gates](#13-quality-gates)
+14. [Troubleshooting Guide](#14-troubleshooting-guide)
 
 ---
 
@@ -33,7 +34,7 @@
 - **Languages:** 7 (MVP: en, es, nl)
 
 ### Implementation Approach
-- **Total Phases:** 6
+- **Total Phases:** 7
 - **Estimated Scope:** ~150 files
 - **Context Clears:** After each phase
 - **Subagent Usage:** For research, testing, and parallel tasks
@@ -1222,7 +1223,78 @@ vercel --prod
 
 ---
 
-## 9. Test Cases
+## 9. Phase 7: Post-MVP Refinements
+
+**Goal:** Polish and refine the shipped MVP based on real usage and priorities
+**Status:** Complete
+**Date:** January 28, 2026
+
+### 7.1 Favicon & PWA
+
+- [x] Wind icon SVG added as favicon (`/src/app/icon.svg`)
+- [x] PWA manifest created (`/src/app/manifest.ts`) for installability
+
+### 7.2 Homepage Fixes
+
+- [x] Quick links updated to point to `/about` instead of non-existent `/guides/*` pages
+- [x] Newsletter signup section removed from homepage
+- [x] Newsletter-related translations and components cleaned up
+
+### 7.3 Navigation & Header
+
+- [x] Orange shop button removed from Header and MobileNav
+- [x] Shop tab renamed to "Fashion" in navigation
+
+### 7.4 About Page Updates
+
+- [x] Sevilla airport (2h drive) added to airports list
+- [x] Cons section rewritten with positive spin:
+  - Wind = "that's why we're here"
+  - Limited transport = "rent a car and enjoy the freedom"
+  - Quiet winters = "more space for you"
+  - Bureaucracy = "use a gestoria"
+
+### 7.5 Footer & Social
+
+- [x] Instagram and Facebook social links removed from Footer
+- [x] Social link constants removed from codebase
+
+### 7.6 Shop / Fashion Page
+
+- [x] Kite gear promotion banner added promoting Tarifa Air Force Eleveight kites
+
+### 7.7 Directory & Partner Spotlight
+
+- [x] Directory and Partner Spotlight updated with promoted businesses:
+  - TAF Coworking
+  - Tarifa Kite Repair
+  - Explora Watersports
+  - Stoked Surf Bar
+  - Surfr App
+  - Tarifa Air Force
+
+### 7.8 Local News Feed (Partial)
+
+- [x] RSS client exists (`src/lib/rss/tarifa-news.ts`) for ciudaddetarifaalminuto.com
+- [ ] **Not yet displayed** on any page -- client fetches data but no UI component renders it
+
+### Phase 7 Quality Gate
+
+- [x] Favicon displays in browser tab
+- [x] PWA manifest is served at `/manifest.json`
+- [x] Quick links navigate to `/about`
+- [x] No newsletter section on homepage
+- [x] No social links in footer
+- [x] Shop renamed to Fashion in navigation
+- [x] Kite gear banner visible on fashion/shop page
+- [x] Partner spotlight shows promoted businesses
+- [x] About page cons have positive framing
+- [x] Sevilla airport listed on about page
+- [x] Build passes with all changes
+
+---
+
+## 10. Test Cases
 
 ### Unit Tests
 
@@ -1300,7 +1372,7 @@ describe('User Journey', () => {
 
 ---
 
-## 10. Context Management Strategy
+## 11. Context Management Strategy
 
 ### When to Clear Context
 
@@ -1349,10 +1421,11 @@ Next task: [specific task]
 | Phase 4 complete | All integrations functional |
 | Phase 5 complete | All translations done |
 | Phase 6 complete | Ready for launch |
+| Phase 7 complete | Post-MVP refinements applied |
 
 ---
 
-## 11. File-by-File Implementation Order
+## 12. File-by-File Implementation Order
 
 ### Critical Path (Must Complete in Order)
 
@@ -1426,7 +1499,7 @@ Stream D: Sanity Schemas
 
 ---
 
-## 12. Quality Gates
+## 13. Quality Gates
 
 ### Gate 1: Project Foundation
 
@@ -1485,9 +1558,22 @@ Stream D: Sanity Schemas
 | No errors | Console clean |
 | Analytics | Tracking verified |
 
+### Gate 7: Post-MVP Refinements
+
+| Requirement | Verification |
+|-------------|--------------|
+| Favicon displays | Wind icon SVG in browser tab |
+| PWA manifest served | `/manifest.json` accessible |
+| No newsletter on homepage | Section removed |
+| No social links in footer | Instagram/Facebook removed |
+| Navigation updated | "Fashion" tab, no orange shop button |
+| Partner spotlight | 6 promoted businesses shown |
+| About page updated | Positive cons, Sevilla airport |
+| Kite gear banner | Visible on fashion/shop page |
+
 ---
 
-## 13. Troubleshooting Guide
+## 14. Troubleshooting Guide
 
 ### Common Issues
 

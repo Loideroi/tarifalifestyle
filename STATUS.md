@@ -1,8 +1,8 @@
 # Tarifalifestyle.com - Implementation Status
 
 **Last Updated:** January 28, 2026
-**Current Phase:** All Phases COMPLETE
-**Status:** Ready for deployment
+**Current Phase:** Phase 7 (Post-MVP Refinements) COMPLETE
+**Status:** Ready for deployment (all 7 phases complete)
 
 ---
 
@@ -94,26 +94,47 @@
 | `npm run lint` | ✅ 0 errors, 0 warnings |
 | TypeScript | ✅ No type errors |
 | All pages render | ✅ 5 pages x 7 locales = 35 routes |
-| API routes | ✅ /api/weather, /api/shopify/products, /api/newsletter |
+| API routes | ✅ /api/weather, /api/shopify/products |
 | SEO files | ✅ sitemap.xml, robots.txt |
 | Error handling | ✅ 404, error, global-error pages |
+| Favicon | ✅ Wind icon SVG |
+| PWA manifest | ✅ /manifest.json served |
+| No newsletter | ✅ Removed from homepage |
+| No social links | ✅ Removed from footer |
+| Navigation | ✅ "Fashion" tab, no orange shop button |
+| Partner spotlight | ✅ 6 promoted businesses |
 
 ---
 
 ## Routes
 
 ```
-/[locale]                    Homepage
-/[locale]/about              About Tarifa
+/[locale]                    Homepage (no newsletter, quick links -> /about)
+/[locale]/about              About Tarifa (positive cons, Sevilla airport)
 /[locale]/conditions         Live wind/weather conditions
-/[locale]/shop               Shopify MCP product search
-/[locale]/directory          Partner directory
+/[locale]/shop               Fashion / Shopify MCP product search + kite gear promo
+/[locale]/directory          Partner directory (6 promoted businesses)
 /api/weather                 Open-Meteo weather data
 /api/shopify/products        Shopify MCP proxy
-/api/newsletter              Newsletter signup
 /sitemap.xml                 Sitemap
 /robots.txt                  Robots
+/manifest.json               PWA manifest
 ```
+
+### Phase 7: Post-MVP Refinements ✅ COMPLETE
+
+- [x] Wind icon SVG favicon added (`/src/app/icon.svg`)
+- [x] PWA manifest created (`/src/app/manifest.ts`)
+- [x] Homepage quick links fixed (point to `/about` instead of `/guides/*`)
+- [x] Newsletter signup removed from homepage
+- [x] Orange shop button removed from Header/MobileNav
+- [x] Shop tab renamed to "Fashion" in navigation
+- [x] Instagram and Facebook social links removed from Footer and constants
+- [x] Sevilla airport (2h) added to About page airports list
+- [x] About page cons rewritten with positive spin
+- [x] Kite gear promotion banner added to shop/fashion page (Tarifa Air Force Eleveight kites)
+- [x] Directory and Partner Spotlight updated with promoted businesses: TAF Coworking, Tarifa Kite Repair, Explora Watersports, Stoked Surf Bar, Surfr App, Tarifa Air Force
+- [x] RSS client for local news exists (`src/lib/rss/tarifa-news.ts`) but not yet displayed on pages
 
 ---
 
@@ -124,10 +145,11 @@
 3. **Sanity Content** - Migrate sample partner data to CMS
 4. **Guide Pages** - Create guides hub and detail pages with Sanity content
 5. **Lifestyle & Community Pages** - Build remaining page content
-6. **Remaining Translations** - Complete de, fr, it, pt translations
-7. **Vercel Deployment** - Deploy to production
-8. **Analytics** - Add Google Analytics / Sentry
-9. **Performance** - Lighthouse optimization pass
+6. **Local News Feed UI** - Display RSS data from `src/lib/rss/tarifa-news.ts` on homepage or community page
+7. **Remaining Translations** - Complete de, fr, it, pt translations
+8. **Vercel Deployment** - Deploy to production
+9. **Analytics** - Add Google Analytics / Sentry
+10. **Performance** - Lighthouse optimization pass
 
 ---
 
@@ -138,17 +160,18 @@ src/
 ├── app/
 │   ├── [locale]/
 │   │   ├── layout.tsx ✅
-│   │   ├── page.tsx ✅
+│   │   ├── page.tsx ✅ (no newsletter, quick links -> /about)
 │   │   ├── not-found.tsx ✅
 │   │   ├── error.tsx ✅
-│   │   ├── about/page.tsx ✅
-│   │   ├── shop/page.tsx ✅
+│   │   ├── about/page.tsx ✅ (positive cons, Sevilla airport)
+│   │   ├── shop/page.tsx ✅ (nav label: "Fashion", kite gear promo)
 │   │   ├── conditions/page.tsx ✅
-│   │   └── directory/page.tsx ✅
+│   │   └── directory/page.tsx ✅ (promoted partners spotlight)
 │   ├── api/
 │   │   ├── shopify/products/route.ts ✅
-│   │   ├── weather/route.ts ✅
-│   │   └── newsletter/route.ts ✅
+│   │   └── weather/route.ts ✅
+│   ├── icon.svg ✅ (wind icon favicon)
+│   ├── manifest.ts ✅ (PWA manifest)
 │   ├── globals.css ✅
 │   ├── layout.tsx ✅
 │   ├── global-error.tsx ✅
@@ -156,8 +179,8 @@ src/
 │   └── robots.ts ✅
 ├── components/
 │   ├── ui/ ✅ (19 shadcn components)
-│   ├── layout/ ✅ (Header, Footer, MobileNav, LanguageSwitcher)
-│   ├── home/ ✅ (HeroCarousel, ConditionsWidget, ShopPreview, PartnerSpotlight, NewsletterSignup, QuickLinks)
+│   ├── layout/ ✅ (Header, Footer, MobileNav, LanguageSwitcher — no orange shop button, no social links)
+│   ├── home/ ✅ (HeroCarousel, ConditionsWidget, ShopPreview, PartnerSpotlight, QuickLinks — newsletter removed)
 │   ├── shop/ ✅ (ProductCard, ProductGrid, CategoryFilter, SearchBar)
 │   ├── weather/ ✅ (CurrentConditions, WindForecast, WindguruEmbed, BeachCamEmbed, SpotSelector, UVIndex)
 │   ├── partners/ ✅ (PartnerCard, PartnerGrid, ContactButtons, MapEmbed)

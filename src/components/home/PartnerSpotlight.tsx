@@ -5,34 +5,37 @@ import { Link } from '@/i18n/navigation';
 import { PartnerCard } from '@/components/partners/PartnerCard';
 import { PartnerGrid } from '@/components/partners/PartnerGrid';
 
-// Sample partners data - will be replaced with Sanity data
+// Featured partners - promoted businesses
 const SAMPLE_PARTNERS = [
   {
-    name: 'Freeride Tarifa',
-    slug: 'freeride-tarifa',
-    description: 'Professional kitesurfing school with lessons for all levels. IKO certified instructors.',
-    category: 'watersports',
-    featured: true,
-  },
-  {
-    name: 'La Cocotera',
-    slug: 'la-cocotera',
-    description: 'Coworking space with stunning views of the Strait of Gibraltar. Fast WiFi and great coffee.',
+    name: 'TAF Coworking',
+    slug: 'taf-coworking',
+    description: 'The best coworking space in Tarifa. Fast WiFi, meeting rooms, and an outdoor terrace.',
     category: 'coworking',
+    website: 'https://taf-coworking.com',
     featured: true,
   },
   {
-    name: 'Cafe Azul',
-    slug: 'cafe-azul',
-    description: 'Charming beachfront restaurant serving fresh seafood and traditional Spanish cuisine.',
+    name: 'Explora Watersports',
+    slug: 'explora-watersports',
+    description: 'Surf, kite, and wing classes for all levels. The go-to school in Tarifa.',
+    category: 'watersports',
+    website: 'https://explorawatersportstarifa.com',
+    featured: true,
+  },
+  {
+    name: 'Tarifa Kite Repair',
+    slug: 'tarifa-kite-repair',
+    description: 'Expert kite and wing foil repair. Get your gear fixed fast.',
+    category: 'watersports',
+    website: 'https://tarifakiterepair.com',
+    featured: true,
+  },
+  {
+    name: 'Stoked Surf Bar',
+    slug: 'stoked-surf-bar',
+    description: 'Great vibes, cold drinks, and tasty food. The go-to spot after a session.',
     category: 'food',
-    featured: true,
-  },
-  {
-    name: 'Tarifa Language School',
-    slug: 'tarifa-language-school',
-    description: 'Learn Spanish in Tarifa with immersive classes and cultural activities.',
-    category: 'education',
     featured: true,
   },
 ];

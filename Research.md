@@ -514,16 +514,20 @@ export async function getWindForecast() {
 
 **Integration:** RSS feed for news headlines
 
-### Integration Summary
+### Promoted Partners (Directory & Partner Spotlight)
 
-| Partner | Best Integration |
-|---------|------------------|
-| Tarifa Air Force | Storefront MCP (products) |
-| Tarifa Kite Repair | WhatsApp + contact card |
-| TAF Coworking | Quote form + gallery |
-| Explora Watersports | Booking widget + WhatsApp |
-| La Casa de la Luz | Contact form + info |
-| Ciudad de Tarifa | **RSS feed** (live news) |
+The following businesses are actively promoted in the Directory page and Partner Spotlight component:
+
+| Partner | Best Integration | Promoted |
+|---------|------------------|----------|
+| Tarifa Air Force | Storefront MCP (products) + kite gear promo banner | Yes |
+| Tarifa Kite Repair | WhatsApp + contact card | Yes |
+| TAF Coworking | Quote form + gallery | Yes |
+| Explora Watersports | Booking widget + WhatsApp | Yes |
+| Stoked Surf Bar | Profile + Glovo link | Yes |
+| Surfr App | App store download links | Yes |
+| La Casa de la Luz | Contact form + info | Not yet |
+| Ciudad de Tarifa | **RSS feed** (client exists, not displayed on pages) | N/A |
 
 ---
 

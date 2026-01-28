@@ -1,20 +1,19 @@
 import { useTranslations } from 'next-intl';
-import { Wind, Instagram, Facebook, Heart } from 'lucide-react';
+import { Wind, Heart } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { SOCIAL_LINKS } from '@/lib/constants';
 
 const footerLinks = {
   quickLinks: [
     { href: '/about', labelKey: 'about' },
     { href: '/conditions', labelKey: 'conditions' },
-    { href: '/shop', labelKey: 'shop' },
+    { href: '/shop', labelKey: 'fashion' },
     { href: '/directory', labelKey: 'directory' },
   ],
   guides: [
-    { href: '/guides/moving', labelKey: 'moving' },
-    { href: '/guides/healthcare', labelKey: 'healthcare' },
-    { href: '/guides/education', labelKey: 'education' },
-    { href: '/guides/working', labelKey: 'working' },
+    { href: '/about', labelKey: 'moving' },
+    { href: '/about', labelKey: 'healthcare' },
+    { href: '/about', labelKey: 'education' },
+    { href: '/about', labelKey: 'working' },
   ],
 } as const;
 
@@ -37,26 +36,6 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">{t('tagline')}</p>
-            <div className="flex gap-4">
-              <a
-                href={SOCIAL_LINKS.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors hover:text-ocean-500"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href={SOCIAL_LINKS.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors hover:text-ocean-500"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}

@@ -12,7 +12,8 @@ import { CategoryFilter } from '@/components/shop/CategoryFilter';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { ProductGrid } from '@/components/shop/ProductGrid';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, ShoppingBag } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { ExternalLink, ShoppingBag, Wind } from 'lucide-react';
 import { getStoreUrl, filterDisplayTags } from '@/lib/shopify/mcp-client';
 import type { MCPParsedResponse } from '@/lib/shopify/types';
 
@@ -123,6 +124,36 @@ export default function ShopPage() {
 
       <Section padding="md">
         <Container>
+          {/* Kite Gear Promotion */}
+          <Card className="mb-8 overflow-hidden border-ocean-200 bg-gradient-to-r from-ocean-50 to-ocean-100">
+            <CardContent className="flex flex-col items-center gap-4 p-6 sm:flex-row sm:justify-between">
+              <div className="flex items-center gap-4">
+                <Wind className="h-10 w-10 shrink-0 text-ocean-600" />
+                <div>
+                  <h3 className="font-display text-lg font-bold text-ocean-800">
+                    Kite Gear - Eleveight Kites &amp; Custom
+                  </h3>
+                  <p className="text-sm text-ocean-600">
+                    Tarifa Air Force stocks Eleveight kites and custom gear. Visit the store for the best kite equipment in Tarifa.
+                  </p>
+                </div>
+              </div>
+              <Button
+                asChild
+                className="shrink-0 gap-2 bg-ocean-600 hover:bg-ocean-700"
+              >
+                <a
+                  href="https://tarifairforce.com?utm_source=tarifalifestyle&utm_medium=website&utm_campaign=kite-gear"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Kite Gear
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
           {/* Search and Filters */}
           <div className="mb-8 space-y-4">
             <SearchBar

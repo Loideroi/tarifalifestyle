@@ -90,7 +90,7 @@ function QuickFacts() {
     {
       icon: Plane,
       label: 'Nearest Airports',
-      value: 'Jerez (1h), Malaga (2h), Gibraltar (45min)',
+      value: 'Gibraltar (45min), Jerez (1h), Sevilla (2h), Malaga (2h)',
     },
     {
       icon: DollarSign,
@@ -199,10 +199,10 @@ function ProsAndCons() {
   ];
 
   const cons = [
-    'Strong wind can be relentless (especially Levante)',
-    'Limited public transport connections',
-    'Seasonal economy - quieter in winter',
-    'Spanish bureaucracy can be challenging',
+    'Strong wind can be relentless (especially Levante) - but this is why we are here!',
+    'Limited public transport connections - rent a car',
+    'Seasonal economy - quieter in winter, more space on the water',
+    'Spanish bureaucracy can be challenging - use a gestoria',
     'Limited healthcare facilities (nearest hospital in Algeciras)',
     'Rental market is competitive in peak season',
   ];

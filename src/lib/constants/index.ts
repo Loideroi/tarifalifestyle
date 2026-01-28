@@ -52,11 +52,6 @@ export const PARTNER_CATEGORIES = [
   'accommodation',
 ] as const;
 
-// Social links
-export const SOCIAL_LINKS = {
-  instagram: 'https://instagram.com/tarifalifestyle',
-  facebook: 'https://facebook.com/tarifalifestyle',
-} as const;
 
 // Emergency numbers
 export const EMERGENCY_NUMBERS = {

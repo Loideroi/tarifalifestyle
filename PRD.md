@@ -63,7 +63,7 @@ Tarifa has become an increasingly popular destination for:
 |------|----------------|--------|
 | Become the go-to resource for Tarifa expats | Monthly unique visitors | 10,000+ within 12 months |
 | Drive traffic to partner businesses | Referral clicks | 500+ monthly clicks to partners |
-| Build community engagement | Newsletter subscribers | 2,000+ within 6 months |
+| Build community engagement | Returning visitors | 2,000+ monthly within 6 months |
 | Generate revenue through affiliates | Shopify conversions | €5,000+ monthly GMV |
 
 ### Secondary Goals
@@ -192,14 +192,14 @@ Accent: "Pacifico" or "Satisfy"
 - **Featured Partners:** Rotating spotlight on partner businesses
 - **Latest from Tarifa:** News feed integration
 - **Shop the Look:** Tarifa Air Force product showcase
-- **Essential Links:** Quick access to most-used resources
-- **Newsletter Signup:** With lead magnet (e.g., "Tarifa Relocation Checklist")
+- **Essential Links:** Quick access to most-used resources (links point to `/about` page)
 
 #### About Tarifa
 - Geographic and cultural introduction
 - Climate and seasons guide
 - Cost of living breakdown
-- Pros and cons of expat life
+- Pros and cons of expat life (cons reframed with positive spin: wind = why we're here, transport = rent a car, winter = more space, bureaucracy = use a gestoria)
+- Airports list including Sevilla airport (2h drive)
 - Photo gallery
 
 #### Live Conditions Dashboard
@@ -216,12 +216,15 @@ Accent: "Pacifico" or "Satisfy"
 - Featured/sponsored placements
 - User reviews (phase 2)
 
-#### Shop (Tarifa Air Force Integration)
+#### Fashion (Tarifa Air Force Integration)
 - Curated collection browser
 - Category navigation (Men/Women, Summer/Beach)
 - Product cards with deep links
+- Kite gear promotion banner (Tarifa Air Force Eleveight kites)
 - "Complete the Look" outfit suggestions
 - Seasonal collections
+
+> **Note:** Navigation tab renamed from "Shop" to "Fashion". The orange shop button has been removed from the Header and MobileNav.
 
 #### Practical Guide Sections
 - **Moving to Tarifa:** Visa, NIE, residency
@@ -460,7 +463,6 @@ Shopify offers a Catalog MCP for AI agents to search global product catalogs.
 |---------|------|---------|
 | Google Maps API | Integration | Interactive maps, business locations |
 | OpenWeather API | Integration | Current weather conditions |
-| Mailchimp/ConvertKit | Integration | Newsletter management |
 | Google Analytics 4 | Tracking | User behavior analytics |
 | Hotjar | Tracking | Heatmaps and user recordings |
 | WhatsApp Business API | Communication | Quick contact buttons |
@@ -563,7 +565,12 @@ Error Tracking: Sentry
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
 
-### 8.3 Project Structure
+### 8.3 Favicon & PWA
+
+- **Favicon:** Wind icon SVG (`/src/app/icon.svg`)
+- **PWA Manifest:** Generated via `/src/app/manifest.ts` for installability and home screen support
+
+### 8.4 Project Structure
 
 ```
 tarifalifestyle/
@@ -616,19 +623,18 @@ tarifalifestyle/
     └── lib/
 ```
 
-### 8.4 API Routes
+### 8.5 API Routes
 
 ```
 /api/shopify/products          - Fetch products from Storefront API
 /api/shopify/collections       - Fetch collections
 /api/weather/current           - Get current weather
 /api/weather/forecast          - Get wind forecast
-/api/newsletter/subscribe      - Newsletter signup
 /api/contact                   - Contact form submissions
 /api/revalidate                - On-demand ISR revalidation
 ```
 
-### 8.5 Performance Optimization
+### 8.6 Performance Optimization
 
 1. **Static Generation (SSG)**
    - All informational pages
@@ -805,10 +811,10 @@ export default createMiddleware({
 ### 11.2 Marketing Channels
 
 1. **Organic Search:** Primary long-term strategy
-2. **Social Media:** Instagram (visual platform, kite community)
-3. **Facebook Groups:** Tarifa expat communities
-4. **Partnerships:** Cross-promotion with partner businesses
-5. **Email Marketing:** Newsletter with valuable content
+2. **Partnerships:** Cross-promotion with partner businesses
+3. **Word of Mouth:** Trusted local recommendations
+
+> **Note:** Instagram and Facebook social links have been removed from the site footer and constants. Social media marketing may be re-evaluated in a future phase.
 
 ---
 
@@ -821,7 +827,7 @@ export default createMiddleware({
 | Monthly Unique Visitors | 2,000 | 10,000 |
 | Page Views per Session | 3+ | 4+ |
 | Bounce Rate | <60% | <50% |
-| Newsletter Subscribers | 500 | 2,000 |
+| Returning Visitors | 500/mo | 2,000/mo |
 | Partner Referral Clicks | 200/month | 500/month |
 | Shopify Product Clicks | 100/month | 300/month |
 
@@ -901,7 +907,7 @@ export default createMiddleware({
    - Sponsored content
 
 4. **Mobile App**
-   - PWA implementation
+   - PWA manifest already implemented (`/src/app/manifest.ts`)
    - Push notifications for conditions
    - Offline access to guides
 
@@ -1018,13 +1024,14 @@ query Products($first: Int!) {
 
 | Partner | Website | Contact Method | Status |
 |---------|---------|----------------|--------|
-| Tarifa Air Force | tarifaairforce.com | Shopify API | Confirmed |
-| Tarifa Kite Repair | tarifakiterepair.com | Email/Phone | TBD |
-| TAF Coworking | taf-coworking.com | Email | TBD |
-| Explora Watersports | explorawatersportstarifa.com | Email | TBD |
+| Tarifa Air Force | tarifaairforce.com | Shopify API | Promoted |
+| Tarifa Kite Repair | tarifakiterepair.com | Email/Phone | Promoted |
+| TAF Coworking | taf-coworking.com | Email | Promoted |
+| Explora Watersports | explorawatersportstarifa.com | Email | Promoted |
+| Stoked Surf Bar | Google Maps | In Person | Promoted |
+| Surfr App | App Stores | Download links | Promoted |
 | La Casa de la Luz | lacasadelaluztarifa.com | Email | TBD |
-| Stoked Surf Bar | Google Maps | In Person | TBD |
-| Ciudad de Tarifa | ciudaddetarifaalminuto.com | RSS/API | TBD |
+| Ciudad de Tarifa | ciudaddetarifaalminuto.com | RSS/API | RSS client exists (not yet displayed on pages) |
 
 ---
 
