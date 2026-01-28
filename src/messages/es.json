@@ -1,0 +1,160 @@
+{
+  "Metadata": {
+    "title": "Tarifa Lifestyle - Tu Guía para la Vida de Expatriado en Tarifa",
+    "description": "El recurso definitivo para expatriados que viven o se mudan a Tarifa, España. Kitesurf, vida de playa y guías prácticas."
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "about": "Sobre Tarifa",
+    "conditions": "Condiciones",
+    "shop": "Tienda",
+    "directory": "Directorio",
+    "guides": "Guías",
+    "lifestyle": "Estilo de Vida",
+    "community": "Comunidad"
+  },
+  "Common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "retry": "Intentar de nuevo",
+    "viewAll": "Ver todo",
+    "learnMore": "Saber más",
+    "contact": "Contacto",
+    "share": "Compartir",
+    "search": "Buscar",
+    "close": "Cerrar",
+    "menu": "Menú"
+  },
+  "Home": {
+    "hero": {
+      "title": "Vive el Sueño de Tarifa",
+      "subtitle": "Tu guía para la vida de expatriado en la capital europea del kitesurf",
+      "cta": "Explora Tarifa"
+    },
+    "conditions": {
+      "title": "Condiciones Actuales",
+      "wind": "Viento",
+      "temperature": "Temperatura",
+      "uvIndex": "Índice UV",
+      "viewForecast": "Ver pronóstico completo"
+    },
+    "shop": {
+      "title": "El Look",
+      "subtitle": "Esenciales de estilo de vida playero de Tarifa Air Force",
+      "viewStore": "Visitar Tienda"
+    },
+    "partners": {
+      "title": "Socios Locales",
+      "subtitle": "Negocios de confianza recomendados por expatriados"
+    },
+    "newsletter": {
+      "title": "Mantente Informado",
+      "subtitle": "Recibe las últimas noticias y consejos de Tarifa",
+      "placeholder": "Tu email",
+      "button": "Suscribirse",
+      "success": "¡Gracias por suscribirte!",
+      "error": "Error al suscribirse"
+    },
+    "quickLinks": {
+      "title": "Enlaces Rápidos",
+      "moving": "Guía de Mudanza",
+      "healthcare": "Sanidad",
+      "schools": "Escuelas",
+      "coworking": "Coworking"
+    }
+  },
+  "Conditions": {
+    "title": "Condiciones en Vivo",
+    "subtitle": "Viento, clima y cámaras de playa en tiempo real",
+    "spots": {
+      "losLances": "Los Lances",
+      "valdevaqueros": "Valdevaqueros",
+      "puntaPaloma": "Punta Paloma"
+    },
+    "forecast": "Pronóstico 7 Días",
+    "beachCam": "Cámara de Playa",
+    "windguru": "Pronóstico Windguru",
+    "currentWind": "Viento Actual",
+    "gusts": "Rachas",
+    "direction": "Dirección",
+    "knots": "nudos"
+  },
+  "Shop": {
+    "title": "Tienda",
+    "subtitle": "Moda de estilo de vida playero de Tarifa Air Force",
+    "categories": {
+      "all": "Todo",
+      "men": "Hombre",
+      "women": "Mujer",
+      "accessories": "Accesorios"
+    },
+    "shopNow": "Comprar Ahora",
+    "viewOnStore": "Ver en tarifairforce.com",
+    "noProducts": "No se encontraron productos"
+  },
+  "Directory": {
+    "title": "Directorio de Negocios",
+    "subtitle": "Socios locales de confianza",
+    "categories": {
+      "all": "Todos",
+      "watersports": "Deportes Acuáticos",
+      "coworking": "Coworking",
+      "education": "Educación",
+      "food": "Comida y Bebida",
+      "services": "Servicios",
+      "accommodation": "Alojamiento"
+    },
+    "contact": "Contacto",
+    "website": "Sitio Web",
+    "directions": "Cómo Llegar",
+    "noPartners": "No se encontraron socios en esta categoría"
+  },
+  "About": {
+    "title": "Sobre Tarifa",
+    "subtitle": "Todo lo que necesitas saber sobre la vida en la capital del viento de España",
+    "intro": {
+      "title": "Bienvenido a Tarifa",
+      "description": "Tarifa es un pequeño pueblo en el punto más meridional de la Europa continental, donde el Mar Mediterráneo se encuentra con el Océano Atlántico. Conocida como la capital del viento de Europa, atrae a kitesurfistas de todo el mundo."
+    },
+    "costOfLiving": {
+      "title": "Coste de Vida",
+      "rent": "Alquiler",
+      "groceries": "Supermercado",
+      "utilities": "Servicios",
+      "dining": "Comer Fuera"
+    },
+    "prosAndCons": {
+      "title": "Pros y Contras",
+      "pros": "Pros",
+      "cons": "Contras"
+    }
+  },
+  "Guides": {
+    "title": "Guías para Expatriados",
+    "subtitle": "Guías prácticas para vivir en Tarifa",
+    "categories": {
+      "moving": "Mudarse a Tarifa",
+      "healthcare": "Sanidad",
+      "education": "Educación",
+      "working": "Trabajo y Negocios",
+      "lifestyle": "Estilo de Vida",
+      "legal": "Legal y Admin"
+    },
+    "readMore": "Leer guía",
+    "lastUpdated": "Última actualización"
+  },
+  "Footer": {
+    "tagline": "Tu guía para la vida de expatriado en Tarifa",
+    "quickLinks": "Enlaces Rápidos",
+    "partners": "Socios",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "copyright": "© {year} Tarifa Lifestyle. Todos los derechos reservados.",
+    "madeWith": "Hecho con amor en Tarifa"
+  },
+  "LanguageSwitcher": {
+    "label": "Idioma",
+    "current": "Idioma actual"
+  }
+}

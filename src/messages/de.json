@@ -1,0 +1,160 @@
+{
+  "Metadata": {
+    "title": "Tarifa Lifestyle - Your Guide to Expat Life in Tarifa",
+    "description": "The ultimate resource for expats living in or moving to Tarifa, Spain. Kitesurfing, beach life, and practical guides."
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About Tarifa",
+    "conditions": "Conditions",
+    "shop": "Shop",
+    "directory": "Directory",
+    "guides": "Guides",
+    "lifestyle": "Lifestyle",
+    "community": "Community"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "contact": "Contact",
+    "share": "Share",
+    "search": "Search",
+    "close": "Close",
+    "menu": "Menu"
+  },
+  "Home": {
+    "hero": {
+      "title": "Live the Tarifa Dream",
+      "subtitle": "Your guide to expat life at Europe's kitesurfing capital",
+      "cta": "Explore Tarifa"
+    },
+    "conditions": {
+      "title": "Current Conditions",
+      "wind": "Wind",
+      "temperature": "Temperature",
+      "uvIndex": "UV Index",
+      "viewForecast": "View full forecast"
+    },
+    "shop": {
+      "title": "Shop the Look",
+      "subtitle": "Beach lifestyle essentials from Tarifa Air Force",
+      "viewStore": "Visit Store"
+    },
+    "partners": {
+      "title": "Local Partners",
+      "subtitle": "Trusted businesses recommended by expats"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "subtitle": "Get the latest Tarifa news and tips",
+      "placeholder": "Your email",
+      "button": "Subscribe",
+      "success": "Thanks for subscribing!",
+      "error": "Failed to subscribe"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "moving": "Moving Guide",
+      "healthcare": "Healthcare",
+      "schools": "Schools",
+      "coworking": "Coworking"
+    }
+  },
+  "Conditions": {
+    "title": "Live Conditions",
+    "subtitle": "Real-time wind, weather, and beach cams",
+    "spots": {
+      "losLances": "Los Lances",
+      "valdevaqueros": "Valdevaqueros",
+      "puntaPaloma": "Punta Paloma"
+    },
+    "forecast": "7-Day Forecast",
+    "beachCam": "Beach Cam",
+    "windguru": "Windguru Forecast",
+    "currentWind": "Current Wind",
+    "gusts": "Gusts",
+    "direction": "Direction",
+    "knots": "knots"
+  },
+  "Shop": {
+    "title": "Shop",
+    "subtitle": "Beach lifestyle fashion from Tarifa Air Force",
+    "categories": {
+      "all": "All",
+      "men": "Men",
+      "women": "Women",
+      "accessories": "Accessories"
+    },
+    "shopNow": "Shop Now",
+    "viewOnStore": "View on tarifairforce.com",
+    "noProducts": "No products found"
+  },
+  "Directory": {
+    "title": "Business Directory",
+    "subtitle": "Trusted local partners",
+    "categories": {
+      "all": "All",
+      "watersports": "Watersports",
+      "coworking": "Coworking",
+      "education": "Education",
+      "food": "Food & Drink",
+      "services": "Services",
+      "accommodation": "Accommodation"
+    },
+    "contact": "Contact",
+    "website": "Website",
+    "directions": "Get Directions",
+    "noPartners": "No partners found in this category"
+  },
+  "About": {
+    "title": "About Tarifa",
+    "subtitle": "Everything you need to know about life in Spain's wind capital",
+    "intro": {
+      "title": "Welcome to Tarifa",
+      "description": "Tarifa is a small town at the southernmost tip of continental Europe, where the Mediterranean Sea meets the Atlantic Ocean. Known as the wind capital of Europe, it attracts kitesurfers from around the world."
+    },
+    "costOfLiving": {
+      "title": "Cost of Living",
+      "rent": "Rent",
+      "groceries": "Groceries",
+      "utilities": "Utilities",
+      "dining": "Dining Out"
+    },
+    "prosAndCons": {
+      "title": "Pros & Cons",
+      "pros": "Pros",
+      "cons": "Cons"
+    }
+  },
+  "Guides": {
+    "title": "Expat Guides",
+    "subtitle": "Practical guides for living in Tarifa",
+    "categories": {
+      "moving": "Moving to Tarifa",
+      "healthcare": "Healthcare",
+      "education": "Education",
+      "working": "Working & Business",
+      "lifestyle": "Lifestyle",
+      "legal": "Legal & Admin"
+    },
+    "readMore": "Read guide",
+    "lastUpdated": "Last updated"
+  },
+  "Footer": {
+    "tagline": "Your guide to expat life in Tarifa",
+    "quickLinks": "Quick Links",
+    "partners": "Partners",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© {year} Tarifa Lifestyle. All rights reserved.",
+    "madeWith": "Made with love in Tarifa"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "current": "Current language"
+  }
+}

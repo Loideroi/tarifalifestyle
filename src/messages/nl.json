@@ -1,0 +1,160 @@
+{
+  "Metadata": {
+    "title": "Tarifa Lifestyle - Jouw Gids voor het Expat Leven in Tarifa",
+    "description": "De ultieme bron voor expats die in Tarifa, Spanje wonen of erheen verhuizen. Kitesurfen, strandleven en praktische gidsen."
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "Over Tarifa",
+    "conditions": "Condities",
+    "shop": "Shop",
+    "directory": "Gids",
+    "guides": "Gidsen",
+    "lifestyle": "Lifestyle",
+    "community": "Community"
+  },
+  "Common": {
+    "loading": "Laden...",
+    "error": "Er ging iets mis",
+    "retry": "Probeer opnieuw",
+    "viewAll": "Bekijk alles",
+    "learnMore": "Meer weten",
+    "contact": "Contact",
+    "share": "Delen",
+    "search": "Zoeken",
+    "close": "Sluiten",
+    "menu": "Menu"
+  },
+  "Home": {
+    "hero": {
+      "title": "Leef de Tarifa Droom",
+      "subtitle": "Jouw gids voor het expat leven in de Europese kitesurf hoofdstad",
+      "cta": "Ontdek Tarifa"
+    },
+    "conditions": {
+      "title": "Huidige Condities",
+      "wind": "Wind",
+      "temperature": "Temperatuur",
+      "uvIndex": "UV Index",
+      "viewForecast": "Bekijk volledige voorspelling"
+    },
+    "shop": {
+      "title": "Shop de Look",
+      "subtitle": "Beach lifestyle essentials van Tarifa Air Force",
+      "viewStore": "Bezoek Winkel"
+    },
+    "partners": {
+      "title": "Lokale Partners",
+      "subtitle": "Vertrouwde bedrijven aanbevolen door expats"
+    },
+    "newsletter": {
+      "title": "Blijf Op de Hoogte",
+      "subtitle": "Ontvang het laatste Tarifa nieuws en tips",
+      "placeholder": "Je email",
+      "button": "Inschrijven",
+      "success": "Bedankt voor je inschrijving!",
+      "error": "Inschrijven mislukt"
+    },
+    "quickLinks": {
+      "title": "Snelle Links",
+      "moving": "Verhuisgids",
+      "healthcare": "Gezondheidszorg",
+      "schools": "Scholen",
+      "coworking": "Coworking"
+    }
+  },
+  "Conditions": {
+    "title": "Live Condities",
+    "subtitle": "Realtime wind, weer en strandcamera's",
+    "spots": {
+      "losLances": "Los Lances",
+      "valdevaqueros": "Valdevaqueros",
+      "puntaPaloma": "Punta Paloma"
+    },
+    "forecast": "7-Daagse Voorspelling",
+    "beachCam": "Strandcamera",
+    "windguru": "Windguru Voorspelling",
+    "currentWind": "Huidige Wind",
+    "gusts": "Windstoten",
+    "direction": "Richting",
+    "knots": "knopen"
+  },
+  "Shop": {
+    "title": "Shop",
+    "subtitle": "Beach lifestyle mode van Tarifa Air Force",
+    "categories": {
+      "all": "Alles",
+      "men": "Heren",
+      "women": "Dames",
+      "accessories": "Accessoires"
+    },
+    "shopNow": "Shop Nu",
+    "viewOnStore": "Bekijk op tarifairforce.com",
+    "noProducts": "Geen producten gevonden"
+  },
+  "Directory": {
+    "title": "Bedrijvengids",
+    "subtitle": "Vertrouwde lokale partners",
+    "categories": {
+      "all": "Alles",
+      "watersports": "Watersport",
+      "coworking": "Coworking",
+      "education": "Onderwijs",
+      "food": "Eten & Drinken",
+      "services": "Diensten",
+      "accommodation": "Accommodatie"
+    },
+    "contact": "Contact",
+    "website": "Website",
+    "directions": "Route",
+    "noPartners": "Geen partners gevonden in deze categorie"
+  },
+  "About": {
+    "title": "Over Tarifa",
+    "subtitle": "Alles wat je moet weten over het leven in Spanje's wind hoofdstad",
+    "intro": {
+      "title": "Welkom in Tarifa",
+      "description": "Tarifa is een klein stadje op het meest zuidelijke punt van het Europese vasteland, waar de Middellandse Zee de Atlantische Oceaan ontmoet. Bekend als de wind hoofdstad van Europa, trekt het kitesurfers van over de hele wereld aan."
+    },
+    "costOfLiving": {
+      "title": "Kosten van Levensonderhoud",
+      "rent": "Huur",
+      "groceries": "Boodschappen",
+      "utilities": "Nutsvoorzieningen",
+      "dining": "Uit Eten"
+    },
+    "prosAndCons": {
+      "title": "Voor- & Nadelen",
+      "pros": "Voordelen",
+      "cons": "Nadelen"
+    }
+  },
+  "Guides": {
+    "title": "Expat Gidsen",
+    "subtitle": "Praktische gidsen voor het leven in Tarifa",
+    "categories": {
+      "moving": "Verhuizen naar Tarifa",
+      "healthcare": "Gezondheidszorg",
+      "education": "Onderwijs",
+      "working": "Werken & Business",
+      "lifestyle": "Lifestyle",
+      "legal": "Juridisch & Admin"
+    },
+    "readMore": "Lees gids",
+    "lastUpdated": "Laatst bijgewerkt"
+  },
+  "Footer": {
+    "tagline": "Jouw gids voor het expat leven in Tarifa",
+    "quickLinks": "Snelle Links",
+    "partners": "Partners",
+    "legal": "Juridisch",
+    "privacy": "Privacybeleid",
+    "terms": "Algemene Voorwaarden",
+    "copyright": "© {year} Tarifa Lifestyle. Alle rechten voorbehouden.",
+    "madeWith": "Gemaakt met liefde in Tarifa"
+  },
+  "LanguageSwitcher": {
+    "label": "Taal",
+    "current": "Huidige taal"
+  }
+}

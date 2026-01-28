@@ -1,26 +1,254 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
+
+/* ===================================
+   TARIFA LIFESTYLE - Beach Theme
+   ===================================
+   Colors: Ocean blue, sandy beige, sunset orange, palm green, driftwood brown
+   Vibe: Tarifa meets Bali - bohemian beach aesthetic
+*/
 
 @theme inline {
+  /* Base shadcn theme vars */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
+  --font-accent: var(--font-pacifico);
+
+  /* shadcn component colors */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Border radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Custom organic border radius */
+  --radius-organic: 1rem 1.5rem 1rem 1.5rem;
+
+  /* ===================================
+     BEACH THEME COLORS
+     =================================== */
+
+  /* Ocean Blue - Primary brand color */
+  --color-ocean-50: #E3F2FD;
+  --color-ocean-100: #BBDEFB;
+  --color-ocean-200: #90CAF9;
+  --color-ocean-300: #64B5F6;
+  --color-ocean-400: #42A5F5;
+  --color-ocean-500: #1E88E5;
+  --color-ocean-600: #1976D2;
+  --color-ocean-700: #1565C0;
+  --color-ocean-800: #0D47A1;
+  --color-ocean-900: #0A3A8A;
+
+  /* Sandy Beige - Warm neutrals */
+  --color-sand-50: #FDFBF7;
+  --color-sand-100: #FAF6EF;
+  --color-sand-200: #F5E6D3;
+  --color-sand-300: #E8D5BC;
+  --color-sand-400: #D4BEA0;
+  --color-sand-500: #C0A684;
+
+  /* Sunset Orange - Accent for CTAs */
+  --color-sunset-300: #FF8A65;
+  --color-sunset-400: #FF7043;
+  --color-sunset-500: #FF5722;
+  --color-sunset-600: #F4511E;
+
+  /* Palm Green - Nature accents */
+  --color-palm-400: #66BB6A;
+  --color-palm-500: #4CAF50;
+  --color-palm-600: #43A047;
+
+  /* Driftwood Brown - Earthy tones */
+  --color-driftwood-300: #A1887F;
+  --color-driftwood-400: #8D6E63;
+  --color-driftwood-500: #795548;
+
+  /* Custom shadows */
+  --shadow-beach: 0 4px 20px -4px rgba(139, 112, 80, 0.2);
+  --shadow-beach-lg: 0 8px 40px -8px rgba(139, 112, 80, 0.25);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+
+  /* Light mode - Beach theme */
+  --background: #FDFBF7; /* sand-50 */
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
+  --primary: #1E88E5; /* ocean-500 */
+  --primary-foreground: #ffffff;
+  --secondary: #F5E6D3; /* sand-200 */
+  --secondary-foreground: #795548; /* driftwood-500 */
+  --muted: #FAF6EF; /* sand-100 */
+  --muted-foreground: #64748b;
+  --accent: #FF7043; /* sunset-400 */
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #E8D5BC; /* sand-300 */
+  --input: #E8D5BC;
+  --ring: #1E88E5; /* ocean-500 */
+
+  /* Chart colors - beach themed */
+  --chart-1: #1E88E5; /* ocean */
+  --chart-2: #4CAF50; /* palm */
+  --chart-3: #FF7043; /* sunset */
+  --chart-4: #8D6E63; /* driftwood */
+  --chart-5: #64B5F6; /* ocean-300 */
+
+  /* Sidebar */
+  --sidebar: #FAF6EF;
+  --sidebar-foreground: #1e293b;
+  --sidebar-primary: #1E88E5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #F5E6D3;
+  --sidebar-accent-foreground: #1e293b;
+  --sidebar-border: #E8D5BC;
+  --sidebar-ring: #1E88E5;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --card: #1e293b;
+  --card-foreground: #f1f5f9;
+  --popover: #1e293b;
+  --popover-foreground: #f1f5f9;
+  --primary: #42A5F5; /* ocean-400 */
+  --primary-foreground: #0f172a;
+  --secondary: #334155;
+  --secondary-foreground: #f1f5f9;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #FF8A65; /* sunset-300 */
+  --accent-foreground: #0f172a;
+  --destructive: #f87171;
+  --border: #334155;
+  --input: #334155;
+  --ring: #42A5F5;
+
+  --chart-1: #42A5F5;
+  --chart-2: #66BB6A;
+  --chart-3: #FF8A65;
+  --chart-4: #A1887F;
+  --chart-5: #90CAF9;
+
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #42A5F5;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: #334155;
+  --sidebar-ring: #42A5F5;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    background-color: var(--color-ocean-200);
+    color: var(--color-ocean-900);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Beach-style card with organic shape */
+  .card-beach {
+    border-radius: var(--radius-organic);
+    box-shadow: var(--shadow-beach);
+    background: var(--card);
+  }
+
+  /* Wave pattern background */
+  .bg-wave {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231E88E5' fill-opacity='0.1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,181.3C960,203,1056,213,1152,197.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% auto;
+  }
+
+  /* Gradient text for headings */
+  .text-gradient-ocean {
+    background: linear-gradient(135deg, var(--color-ocean-500), var(--color-ocean-700));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-sunset {
+    background: linear-gradient(135deg, var(--color-sunset-400), var(--color-sunset-600));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  /* Beach shadow utilities */
+  .shadow-beach {
+    box-shadow: var(--shadow-beach);
+  }
+
+  .shadow-beach-lg {
+    box-shadow: var(--shadow-beach-lg);
+  }
+
+  /* Organic border radius */
+  .rounded-organic {
+    border-radius: var(--radius-organic);
+  }
 }
