@@ -161,17 +161,20 @@ Accent: "Pacifico" or "Satisfy"
   - Each partner business featured with custom photography
 
 - **UI Elements:**
-  - Organic, rounded shapes
-  - Subtle wave patterns
-  - Palm leaf/tropical accents
-  - Rattan/woven texture backgrounds
+  - Organic, rounded shapes (blob containers with asymmetric border-radius)
+  - Subtle wave patterns (CSS clip-path wave edges on cards and sections)
+  - Hand-coded inline SVG illustrations in warm line-art style
+  - 8 beach icons, animated kitesurfer hero scene, panoramic coastline strip, Tarifa skyline
   - Floating cards with soft shadows
+  - Decorative blob shapes between sections
 
 - **Animation Philosophy:**
   - Gentle parallax scrolling
   - Smooth page transitions
   - Subtle hover effects
   - Wind-inspired micro-interactions
+  - Framer Motion floating illustrations (translateY bob + rotate sway)
+  - Animated kite sway, wave drift, seagull float, sun ray pulse in hero SVG
 
 ### Layout Principles
 

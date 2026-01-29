@@ -1389,6 +1389,85 @@ vercel --prod
 - [x] No references to "Punta Paloma" or old spot ID 458886/13586 remain in code
 - [x] Build passes with all changes
 
+### Phase 7.3: Visual Design Upgrade - SVG Illustrations & Playful Shapes
+
+**Goal:** Add hand-coded inline SVG illustrations and organic/playful shapes across all homepage sections
+**Status:** Complete
+**Date:** January 29, 2026
+
+#### 7.3.1 Shared Foundation Components
+
+- [x] `src/lib/constants/blob-paths.ts` — 6 pre-defined SVG blob path strings (blobA–blobF), 500×500 viewBox
+- [x] `src/components/common/ShapedContainer.tsx` — Wrapper with blob (asymmetric border-radius), wave-edge (CSS clip-path polygon), and organic-circle variants; color props (ocean/sunset/sand/palm/driftwood)
+- [x] `src/components/common/FloatingIllustration.tsx` — Absolutely positioned wrapper with Framer Motion translateY bob + slight rotate sway animation
+- [x] `src/app/globals.css` — Added `.clip-wave-top`/`.clip-wave-bottom` utilities, `.blob-shadow`, `gentle-float` keyframes
+
+#### 7.3.2 SVG Illustration Components
+
+All in line-art style with 2px stroke, rounded caps, partial fills at low opacity using the beach color palette.
+
+- [x] `src/components/illustrations/BeachIcons.tsx` — 8 named exports:
+  - `HouseWithPalm` (Moving/QuickLink), `FirstAidSun` (Healthcare), `BookWithWave` (Schools), `LaptopBeach` (Coworking)
+  - `Surfboard`, `BeachUmbrella`, `Sunglasses`, `CoffeeCup` (decorative accents)
+  - Each 64×64 viewBox, accepts `className`, stroke in driftwood-500, accent fills at 20% opacity
+- [x] `src/components/illustrations/KitesurferScene.tsx` — 800×400 animated hero SVG:
+  - Kitesurfer silhouette, kite with sway animation, ocean waves with horizontal drift, sun rays with opacity pulse, seagulls with path animation, scattered clouds
+- [x] `src/components/illustrations/CoastlineStrip.tsx` — 1200×150 panoramic line-art:
+  - Rolling waves, distant wind turbines (rotating blades), kites in sky, beach outline, lighthouse hint, animated wave paths
+- [x] `src/components/illustrations/TarifaSkyline.tsx` — 800×120 static whitewashed buildings:
+  - Multiple buildings with terracotta roofs, mosque minaret, two palm trees, windows in ocean-200
+
+#### 7.3.3 Homepage Section Updates
+
+- [x] `HeroCarousel.tsx` — KitesurferScene layered behind text at 30% opacity with mix-blend-mode: soft-light; floating Surfboard accent at bottom-left
+- [x] `QuickLinks.tsx` — Lucide icons replaced with BeachIcons in ShapedContainer blob wrappers (80×80); cards get clip-wave-bottom
+- [x] `ConditionsWidget.tsx` — CoastlineStrip between title and data cards; floating Surfboard accent top-right
+- [x] `ShopPreview.tsx` — Floating Sunglasses (top-left) + BeachUmbrella (bottom-right) at 15% opacity; wavy SVG underline accent on title
+- [x] `PartnerSpotlight.tsx` — CoffeeCup accent above heading; TarifaSkyline at bottom at 30% opacity
+- [x] `LocalNews.tsx` — Repeating wave pattern as background-image (inline SVG data URI, ocean-100 at ~4% fill-opacity)
+
+#### 7.3.4 Decorative Blobs Between Sections
+
+- [x] `src/app/[locale]/DecorativeBlobs.tsx` — Client component rendering organic blob SVGs
+- [x] `src/app/[locale]/page.tsx` — DecorativeBlobs placed at two section boundaries (QuickLinks→Conditions, Shop→Partners)
+- [x] Colors: ocean-100, sunset-300, palm-400, sand-300 at low opacity
+
+#### 7.3.5 New Files (8)
+
+| File | Purpose |
+|------|---------|
+| `src/lib/constants/blob-paths.ts` | 6 blob SVG path constants |
+| `src/components/common/ShapedContainer.tsx` | Playful shape wrapper (blob/wave-edge/organic-circle) |
+| `src/components/common/FloatingIllustration.tsx` | Positioned + animated illustration wrapper |
+| `src/components/illustrations/BeachIcons.tsx` | 8 hand-coded SVG beach icons |
+| `src/components/illustrations/KitesurferScene.tsx` | Animated hero kitesurfer scene |
+| `src/components/illustrations/CoastlineStrip.tsx` | Panoramic coastline line-art |
+| `src/components/illustrations/TarifaSkyline.tsx` | Whitewashed building skyline |
+| `src/app/[locale]/DecorativeBlobs.tsx` | Decorative blob elements between sections |
+
+#### 7.3.6 Modified Files (8)
+
+| File | Changes |
+|------|---------|
+| `src/app/globals.css` | Wave clip-path utilities, blob shadow, float keyframes |
+| `src/components/common/index.ts` | Barrel exports for ShapedContainer, FloatingIllustration |
+| `src/components/home/HeroCarousel.tsx` | KitesurferScene + floating accents |
+| `src/components/home/QuickLinks.tsx` | BeachIcons in blob containers, wavy-edge cards |
+| `src/components/home/ConditionsWidget.tsx` | CoastlineStrip + floating accent |
+| `src/components/home/ShopPreview.tsx` | FloatingIllustration accents + wavy underline |
+| `src/components/home/PartnerSpotlight.tsx` | TarifaSkyline + CoffeeCup accent |
+| `src/components/home/LocalNews.tsx` | Wave pattern background texture |
+| `src/app/[locale]/page.tsx` | DecorativeBlobs between sections |
+
+#### Phase 7.3 Quality Gate
+
+- [x] `npm run build` passes with 0 errors
+- [x] Every homepage section has at least one illustrated/decorative element
+- [x] QuickLinks use blob-shaped icon containers instead of rectangular Lucide icons
+- [x] Framer Motion animations use transform/opacity only (GPU-accelerated)
+- [x] All decorative SVGs have `aria-hidden="true"`
+- [x] Illustrations hidden or scaled appropriately on mobile (hidden md:block where needed)
+
 ---
 
 ## 10. Test Cases

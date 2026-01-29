@@ -7,6 +7,9 @@ import { Link } from '@/i18n/navigation';
 import { Wind, Thermometer, Sun, Navigation } from 'lucide-react';
 import { LoadingCard } from '@/components/common/LoadingSpinner';
 import { ErrorDisplay } from '@/components/common/ErrorBoundary';
+import { FloatingIllustration } from '@/components/common/FloatingIllustration';
+import { CoastlineStrip } from '@/components/illustrations/CoastlineStrip';
+import { Surfboard } from '@/components/illustrations/BeachIcons';
 import {
   degreesToDirection,
   formatWindSpeed,
@@ -54,7 +57,7 @@ export function ConditionsWidget({
 
   if (loading) {
     return (
-      <section className="bg-sand-100 py-16">
+      <section className="relative bg-sand-100 py-16">
         <div className="container mx-auto px-4">
           <h2 className="mb-8 font-display text-2xl font-bold sm:text-3xl">
             {title}
@@ -71,7 +74,7 @@ export function ConditionsWidget({
 
   if (error || !data) {
     return (
-      <section className="bg-sand-100 py-16">
+      <section className="relative bg-sand-100 py-16">
         <div className="container mx-auto px-4">
           <h2 className="mb-8 font-display text-2xl font-bold sm:text-3xl">
             {title}
@@ -100,7 +103,12 @@ export function ConditionsWidget({
   const uvLevel = getUVLevel(currentUV);
 
   return (
-    <section className="bg-sand-100 py-16">
+    <section className="relative overflow-hidden bg-sand-100 py-16">
+      {/* Floating surfboard accent */}
+      <FloatingIllustration position="top-right" className="opacity-15 hidden md:block" animationDelay={1}>
+        <Surfboard className="h-20 w-20" />
+      </FloatingIllustration>
+
       <div className="container mx-auto px-4">
         <div className="mb-8 flex items-center justify-between">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">
@@ -109,6 +117,11 @@ export function ConditionsWidget({
           <Button asChild variant="outline">
             <Link href="/conditions">{viewForecastLabel}</Link>
           </Button>
+        </div>
+
+        {/* Coastline illustration strip */}
+        <div className="mb-8 -mx-4 opacity-60">
+          <CoastlineStrip className="w-full h-auto" />
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">

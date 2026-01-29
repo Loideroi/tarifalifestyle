@@ -6,6 +6,9 @@ import { Link } from '@/i18n/navigation';
 import { Wind, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { KitesurferScene } from '@/components/illustrations/KitesurferScene';
+import { FloatingIllustration } from '@/components/common/FloatingIllustration';
+import { Surfboard } from '@/components/illustrations/BeachIcons';
 
 interface HeroSlide {
   title: string;
@@ -73,6 +76,16 @@ export function HeroCarousel({
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.2)_1px,_transparent_1px)] bg-[length:24px_24px]" />
       </div>
+
+      {/* Kitesurfer scene illustration */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-30 mix-blend-soft-light">
+        <KitesurferScene className="h-full w-full max-w-[800px]" />
+      </div>
+
+      {/* Floating decorative accents */}
+      <FloatingIllustration position="bottom-left" className="opacity-15 hidden md:block">
+        <Surfboard className="h-24 w-24" />
+      </FloatingIllustration>
 
       <div className="container relative mx-auto px-4 text-center">
         <AnimatePresence mode="wait">

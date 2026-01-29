@@ -5,8 +5,10 @@ import { Button } from '@/components/ui/button';
 import { ShoppingBag, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { LoadingCard } from '@/components/common/LoadingSpinner';
+import { FloatingIllustration } from '@/components/common/FloatingIllustration';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { ProductGrid } from '@/components/shop/ProductGrid';
+import { Sunglasses, BeachUmbrella } from '@/components/illustrations/BeachIcons';
 import { getStoreUrl, filterDisplayTags } from '@/lib/shopify/mcp-client';
 import type { MCPParsedResponse } from '@/lib/shopify/types';
 
@@ -51,13 +53,32 @@ export function ShopPreview({
   const hasProducts = products.length > 0;
 
   return (
-    <section className="py-16">
+    <section className="relative overflow-hidden py-16">
+      {/* Floating decorative accents */}
+      <FloatingIllustration position="top-left" className="opacity-15 hidden md:block" animationDelay={0.5}>
+        <Sunglasses className="h-20 w-20" />
+      </FloatingIllustration>
+      <FloatingIllustration position="bottom-right" className="opacity-15 hidden md:block" animationDelay={2}>
+        <BeachUmbrella className="h-24 w-24" />
+      </FloatingIllustration>
+
       <div className="container mx-auto px-4">
         <div className="mb-8 text-center">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">
             {title}
           </h2>
-          <p className="mt-2 text-muted-foreground">{subtitle}</p>
+          {/* Wavy underline accent */}
+          <svg className="mx-auto mt-2 h-2 w-24" viewBox="0 0 96 8" fill="none" aria-hidden="true">
+            <path
+              d="M0 4 Q12 0 24 4 Q36 8 48 4 Q60 0 72 4 Q84 8 96 4"
+              stroke="var(--color-ocean-400)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              fill="none"
+              strokeOpacity="0.5"
+            />
+          </svg>
+          <p className="mt-3 text-muted-foreground">{subtitle}</p>
         </div>
 
         {loading ? (

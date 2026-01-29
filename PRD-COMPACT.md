@@ -1,6 +1,6 @@
 # Tarifalifestyle.com - Compact PRD
 
-**Updated:** January 29, 2026 (Phase 7.2 updates applied)
+**Updated:** January 29, 2026 (Phase 7.3 updates applied)
 
 ## Overview
 
@@ -34,6 +34,14 @@ Analytics:    GA4 + Vercel Analytics
 **Style:** Tarifa meets Bali - bohemian beach aesthetic
 **Colors:** Ocean blue (#1E88E5), sandy beige (#F5E6D3), sunset orange (#FF7043), palm green (#4CAF50)
 **Vibe:** Golden hour photography, organic shapes, wave patterns
+
+**Visual Upgrade (Phase 7.3):**
+- Hand-coded inline SVG illustrations in warm line-art style (2px stroke, partial watercolor-wash fills)
+- 8 beach icons (HouseWithPalm, FirstAidSun, BookWithWave, LaptopBeach, Surfboard, BeachUmbrella, Sunglasses, CoffeeCup)
+- Animated kitesurfer hero scene, panoramic coastline strip, Tarifa skyline
+- Non-rectangular shapes: organic blobs (asymmetric border-radius), wavy edges (CSS clip-path), organic circles
+- Framer Motion floating animations (translateY bob + rotate sway)
+- Decorative blob elements between homepage sections
 
 ---
 

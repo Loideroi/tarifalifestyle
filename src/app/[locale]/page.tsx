@@ -7,6 +7,7 @@ import { ShopPreview } from '@/components/home/ShopPreview';
 import { PartnerSpotlight } from '@/components/home/PartnerSpotlight';
 import { LocalNews } from '@/components/home/LocalNews';
 import { WaveDivider } from '@/components/common/WaveDivider';
+import { DecorativeBlobs } from './DecorativeBlobs';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -21,10 +22,16 @@ export default async function HomePage({ params }: Props) {
     <>
       <HeroSection />
       <QuickLinksSection />
-      <ConditionsSection />
+      <div className="relative">
+        <DecorativeBlobs position="top" />
+        <ConditionsSection />
+      </div>
       <WaveDivider color="white" />
       <ShopSection />
-      <WaveDivider color="sand" flip />
+      <div className="relative">
+        <DecorativeBlobs position="middle" />
+        <WaveDivider color="sand" flip />
+      </div>
       <PartnersSection />
       <LocalNews
         title={t('title')}
@@ -97,4 +104,3 @@ function PartnersSection() {
     />
   );
 }
-

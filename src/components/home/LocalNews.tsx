@@ -20,7 +20,14 @@ export async function LocalNews({
   }
 
   return (
-    <section className="bg-sand-50 py-16">
+    <section
+      className="bg-sand-50 py-16"
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%231E88E5' fill-opacity='0.04' d='M0,30 Q60,20 120,30 Q180,40 240,30 Q300,20 360,30 Q420,40 480,30 Q540,20 600,30 Q660,40 720,30 Q780,20 840,30 Q900,40 960,30 Q1020,20 1080,30 Q1140,40 1200,30 Q1260,20 1320,30 Q1380,40 1440,30 V60 H0 Z'/%3E%3C/svg%3E")`,
+        backgroundRepeat: 'repeat-y',
+        backgroundSize: '100% 60px',
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="mb-8 text-center">
           <Newspaper className="mx-auto mb-3 h-8 w-8 text-ocean-500" />

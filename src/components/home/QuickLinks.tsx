@@ -2,13 +2,19 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/i18n/navigation';
-import { MapPin, Sun, BookOpen, Building2 } from 'lucide-react';
+import { ShapedContainer } from '@/components/common/ShapedContainer';
+import {
+  HouseWithPalm,
+  FirstAidSun,
+  BookWithWave,
+  LaptopBeach,
+} from '@/components/illustrations/BeachIcons';
 
 interface QuickLink {
   href: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
-  color: string;
+  color: 'sunset' | 'palm' | 'ocean' | 'driftwood';
 }
 
 interface QuickLinksProps {
@@ -29,27 +35,27 @@ export function QuickLinks({
   const links: QuickLink[] = [
     {
       href: '/about',
-      icon: MapPin,
+      icon: HouseWithPalm,
       title: movingLabel,
-      color: 'text-sunset-400',
+      color: 'sunset',
     },
     {
       href: '/about',
-      icon: Sun,
+      icon: FirstAidSun,
       title: healthcareLabel,
-      color: 'text-palm-500',
+      color: 'palm',
     },
     {
       href: '/about',
-      icon: BookOpen,
+      icon: BookWithWave,
       title: schoolsLabel,
-      color: 'text-ocean-500',
+      color: 'ocean',
     },
     {
       href: '/directory',
-      icon: Building2,
+      icon: LaptopBeach,
       title: coworkingLabel,
-      color: 'text-driftwood-400',
+      color: 'driftwood',
     },
   ];
 
@@ -63,10 +69,16 @@ export function QuickLinks({
           {links.map((link) => {
             const Icon = link.icon;
             return (
-              <Link key={link.href} href={link.href}>
-                <Card className="h-full transition-all hover:-translate-y-1 hover:shadow-beach">
-                  <CardContent className="flex items-center gap-4 p-6">
-                    <Icon className={`h-8 w-8 ${link.color}`} />
+              <Link key={link.title} href={link.href}>
+                <Card className="h-full clip-wave-bottom transition-all hover:-translate-y-1 hover:shadow-beach">
+                  <CardContent className="flex flex-col items-center gap-4 p-6 text-center">
+                    <ShapedContainer
+                      variant="blob"
+                      color={link.color}
+                      className="h-20 w-20 blob-shadow"
+                    >
+                      <Icon className="h-12 w-12" />
+                    </ShapedContainer>
                     <span className="font-medium">{link.title}</span>
                   </CardContent>
                 </Card>
