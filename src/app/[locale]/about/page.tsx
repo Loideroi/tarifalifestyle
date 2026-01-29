@@ -3,6 +3,10 @@ import { setRequestLocale } from 'next-intl/server';
 import { PageHeader } from '@/components/common/PageHeader';
 import { Container } from '@/components/common/Container';
 import { Section } from '@/components/common/Section';
+import { FloatingIllustration } from '@/components/common/FloatingIllustration';
+import { ShapedContainer } from '@/components/common/ShapedContainer';
+import { WaveDivider } from '@/components/common/WaveDivider';
+import { HouseWithPalm, Surfboard } from '@/components/illustrations/BeachIcons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -29,7 +33,9 @@ export default async function AboutPage({ params }: Props) {
       <AboutHeader />
       <IntroSection />
       <QuickFacts />
+      <WaveDivider color="white" />
       <CostOfLiving />
+      <WaveDivider color="sand" flip />
       <ProsAndCons />
     </>
   );
@@ -52,7 +58,10 @@ function IntroSection() {
   const t = useTranslations('About.intro');
 
   return (
-    <Section background="default">
+    <Section background="default" className="relative overflow-hidden">
+      <FloatingIllustration position="top-right" className="opacity-40">
+        <HouseWithPalm className="h-24 w-24 md:h-32 md:w-32" />
+      </FloatingIllustration>
       <Container size="md">
         <h2 className="font-display text-2xl font-bold text-ocean-800 sm:text-3xl">
           {t('title')}
@@ -66,36 +75,47 @@ function IntroSection() {
 }
 
 function QuickFacts() {
-  const facts = [
+  const facts: {
+    icon: typeof MapPin;
+    label: string;
+    value: string;
+    color: 'ocean' | 'sunset' | 'sand' | 'palm' | 'driftwood';
+  }[] = [
     {
       icon: MapPin,
       label: 'Location',
       value: 'Southernmost point of continental Europe',
+      color: 'ocean',
     },
     {
       icon: Users,
       label: 'Population',
       value: '~18,000 (growing expat community)',
+      color: 'palm',
     },
     {
       icon: Wind,
       label: 'Wind Days',
       value: '300+ days per year',
+      color: 'driftwood',
     },
     {
       icon: Sun,
       label: 'Sunshine',
       value: '320+ sunny days per year',
+      color: 'sunset',
     },
     {
       icon: Plane,
       label: 'Nearest Airports',
       value: 'Gibraltar (45min), Jerez (1h), Sevilla (2h), Malaga (2h)',
+      color: 'ocean',
     },
     {
       icon: DollarSign,
       label: 'Currency',
       value: 'Euro (EUR)',
+      color: 'sand',
     },
   ];
 
@@ -111,9 +131,9 @@ function QuickFacts() {
             return (
               <Card key={fact.label}>
                 <CardContent className="flex items-start gap-4 p-5">
-                  <div className="rounded-lg bg-ocean-100 p-2">
-                    <Icon className="h-5 w-5 text-ocean-600" />
-                  </div>
+                  <ShapedContainer variant="blob" color={fact.color} size="p-2.5">
+                    <Icon className="h-5 w-5 text-current" />
+                  </ShapedContainer>
                   <div>
                     <p className="font-medium text-ocean-800">{fact.label}</p>
                     <p className="mt-1 text-sm text-driftwood-500">
@@ -208,7 +228,10 @@ function ProsAndCons() {
   ];
 
   return (
-    <Section background="sand">
+    <Section background="sand" className="relative overflow-hidden">
+      <FloatingIllustration position="bottom-left" className="opacity-25 hidden md:block">
+        <Surfboard className="h-20 w-20 md:h-28 md:w-28" />
+      </FloatingIllustration>
       <Container>
         <h2 className="mb-8 text-center font-display text-2xl font-bold text-ocean-800 sm:text-3xl">
           {t('title')}

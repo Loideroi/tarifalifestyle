@@ -5,14 +5,18 @@ import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/common/PageHeader';
 import { Container } from '@/components/common/Container';
 import { Section } from '@/components/common/Section';
+import { FloatingIllustration } from '@/components/common/FloatingIllustration';
 import { LoadingSpinner } from '@/components/common/LoadingSpinner';
 import { ErrorDisplay } from '@/components/common/ErrorBoundary';
+import { CoastlineStrip } from '@/components/illustrations/CoastlineStrip';
+import { Surfboard } from '@/components/illustrations/BeachIcons';
 import { CurrentConditions } from '@/components/weather/CurrentConditions';
 import { WindForecast } from '@/components/weather/WindForecast';
 import { WindguruEmbed, WINDGURU_SPOTS } from '@/components/weather/WindguruEmbed';
 import { BeachCamEmbed } from '@/components/weather/BeachCamEmbed';
 import { SpotSelector } from '@/components/weather/SpotSelector';
 import { UVIndexBar } from '@/components/weather/UVIndex';
+import { blobE } from '@/lib/constants/blob-paths';
 import type { WeatherData } from '@/lib/weather/types';
 
 type SpotKey = keyof typeof WINDGURU_SPOTS;
@@ -58,7 +62,26 @@ export default function ConditionsPage() {
         breadcrumbs={[{ label: t('title') }]}
       />
 
-      <Section padding="md">
+      {/* Coastline strip below header */}
+      <div className="relative w-full overflow-hidden opacity-30" aria-hidden="true">
+        <CoastlineStrip className="w-full" />
+      </div>
+
+      <Section padding="md" className="relative overflow-hidden">
+        {/* Background blob */}
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-24 top-1/4 h-72 w-72 md:h-96 md:w-96 opacity-[0.06]"
+          viewBox="0 0 500 500"
+        >
+          <path d={blobE} fill="var(--color-palm-400)" />
+        </svg>
+
+        {/* Floating surfboard */}
+        <FloatingIllustration position="top-right" className="opacity-30 hidden md:block">
+          <Surfboard className="h-20 w-20 md:h-28 md:w-28" />
+        </FloatingIllustration>
+
         <Container>
           <div className="mb-6 flex items-center justify-between">
             <h2 className="font-display text-xl font-bold text-ocean-800">

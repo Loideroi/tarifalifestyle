@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Link } from '@/i18n/navigation';
 import { ChevronRight, Home } from 'lucide-react';
 import { Container } from './Container';
+import { blobB, blobD } from '@/lib/constants/blob-paths';
 
 interface Breadcrumb {
   label: string;
@@ -32,10 +33,52 @@ export function PageHeader({
   background = 'default',
 }: PageHeaderProps) {
   const isLight = background === 'default';
+  const hasDecorations = background !== 'default';
 
   return (
-    <div className={cn('py-12 md:py-16', backgroundStyles[background], className)}>
-      <Container>
+    <div
+      className={cn(
+        'relative overflow-hidden py-12 md:py-16',
+        hasDecorations && 'pb-16 md:pb-20',
+        backgroundStyles[background],
+        className
+      )}
+    >
+      {/* Dot texture overlay */}
+      {hasDecorations && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)',
+            backgroundSize: '20px 20px',
+            opacity: 0.3,
+          }}
+        />
+      )}
+
+      {/* Blob overlays */}
+      {hasDecorations && (
+        <>
+          <svg
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 md:h-80 md:w-80"
+            viewBox="0 0 500 500"
+          >
+            <path d={blobB} fill="white" fillOpacity={0.08} />
+          </svg>
+          <svg
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 md:h-72 md:w-72"
+            viewBox="0 0 500 500"
+          >
+            <path d={blobD} fill="white" fillOpacity={0.1} />
+          </svg>
+        </>
+      )}
+
+      <Container className="relative z-10">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav
             aria-label="Breadcrumb"
@@ -94,6 +137,23 @@ export function PageHeader({
           </p>
         )}
       </Container>
+
+      {/* Wave bottom edge */}
+      {hasDecorations && (
+        <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
+          <svg
+            className="block w-full h-8 md:h-12"
+            viewBox="0 0 1200 60"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      )}
     </div>
   );
 }

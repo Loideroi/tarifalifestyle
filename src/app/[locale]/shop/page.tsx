@@ -5,8 +5,11 @@ import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/common/PageHeader';
 import { Container } from '@/components/common/Container';
 import { Section } from '@/components/common/Section';
+import { FloatingIllustration } from '@/components/common/FloatingIllustration';
 import { LoadingCard } from '@/components/common/LoadingSpinner';
 import { ErrorDisplay } from '@/components/common/ErrorBoundary';
+import { Sunglasses, BeachUmbrella } from '@/components/illustrations/BeachIcons';
+import { TarifaSkyline } from '@/components/illustrations/TarifaSkyline';
 import { SearchBar } from '@/components/shop/SearchBar';
 import { CategoryFilter } from '@/components/shop/CategoryFilter';
 import { ProductCard } from '@/components/shop/ProductCard';
@@ -122,7 +125,12 @@ export default function ShopPage() {
         breadcrumbs={[{ label: t('title') }]}
       />
 
-      <Section padding="md">
+      <Section padding="md" className="relative overflow-hidden">
+        {/* Floating sunglasses */}
+        <FloatingIllustration position="top-right" className="opacity-25 hidden md:block">
+          <Sunglasses className="h-20 w-20 md:h-28 md:w-28" />
+        </FloatingIllustration>
+
         <Container>
           {/* Kite Gear Promotion */}
           <Card className="mb-8 overflow-hidden border-ocean-200 bg-gradient-to-r from-ocean-50 to-ocean-100">
@@ -233,7 +241,17 @@ export default function ShopPage() {
             </div>
           )}
         </Container>
+
+        {/* Floating beach umbrella */}
+        <FloatingIllustration position="bottom-left" className="opacity-25 hidden md:block" animationDelay={2}>
+          <BeachUmbrella className="h-20 w-20 md:h-28 md:w-28" />
+        </FloatingIllustration>
       </Section>
+
+      {/* Decorative skyline */}
+      <div className="pointer-events-none w-full opacity-30" aria-hidden="true">
+        <TarifaSkyline className="w-full" />
+      </div>
     </>
   );
 }
