@@ -1,8 +1,8 @@
 # Tarifalifestyle.com - Implementation Status
 
 **Last Updated:** January 29, 2026
-**Current Phase:** Phase 7.3 (Visual Design Upgrade) COMPLETE
-**Status:** Ready for deployment (all phases through 7.3 complete)
+**Current Phase:** Phase 7.4 (Business Directory Upgrade) COMPLETE
+**Status:** Ready for deployment (all phases through 7.4 complete)
 
 ---
 
@@ -93,7 +93,7 @@
 | `npm run build` | ✅ Passes |
 | `npm run lint` | ✅ 0 errors, 0 warnings |
 | TypeScript | ✅ No type errors |
-| All pages render | ✅ 5 pages x 7 locales = 35 routes |
+| All pages render | ✅ 5 pages x 7 locales + 14 detail pages x 7 locales = 133 routes |
 | API routes | ✅ /api/weather, /api/shopify/products |
 | SEO files | ✅ sitemap.xml, robots.txt |
 | Error handling | ✅ 404, error, global-error pages |
@@ -106,7 +106,7 @@
 | Hero button | ✅ "Check Conditions" visible with bg-transparent fix |
 | Local news feed | ✅ 4 articles on homepage via LocalNews component |
 | ISR revalidation | ✅ Homepage revalidates every 30 minutes |
-| Directory partners | ✅ Original partners restored + Numero C, La Casa de la Luz, Tarifa Day Care added |
+| Directory partners | ✅ 14 partners with detail pages, shared data source, nursery renamed, dead links removed |
 | News translations | ✅ All 7 locale files updated |
 | Windguru spots | ✅ Los Lances (48776), Valdevaqueros (541946), Campo de Fútbol (976270) |
 | Windguru forecast | ✅ 10-day (240h) with wave height, cloud cover, precipitation |
@@ -125,7 +125,8 @@
 /[locale]/about              About Tarifa (positive cons, Sevilla airport)
 /[locale]/conditions         Live wind/weather conditions
 /[locale]/shop               Fashion / Shopify MCP product search + kite gear promo
-/[locale]/directory          Partner directory (6 promoted businesses)
+/[locale]/directory          Partner directory (14 businesses, 6 featured)
+/[locale]/directory/[slug]  Partner detail pages (14 slugs)
 /api/weather                 Open-Meteo weather data
 /api/shopify/products        Shopify MCP proxy
 /sitemap.xml                 Sitemap
@@ -193,6 +194,26 @@
 - [x] `DecorativeBlobs` client component for inter-section decorative shapes
 - [x] Build passes with 0 errors
 
+### Phase 7.4: Business Directory Upgrade ✅ COMPLETE
+
+- [x] Shared partner data source (`src/data/partners.ts`) — single source of truth for all 14 partners
+- [x] `PartnerData` type with enhanced fields: `longDescription`, `heroImage`, `instagram`, `googleMapsUrl`, `tags`
+- [x] Helper functions: `getPartnerBySlug()`, `getFeaturedPartners()`, `getAllSlugs()`
+- [x] "Tarifa Day Care" renamed to "La Tribu de la Luz" (Montessori family association, Instagram: tribuluztarifa)
+- [x] Dead links removed: `tarifaspanish.com` (Tarifa Language Academy) and `casatarifa.com` (Casa Tarifa Rentals) — DNS dead
+- [x] 14 branded SVG placeholder hero images (`public/images/partners/{slug}.svg`) with category-themed gradients and icons
+- [x] Partner detail pages (`/[locale]/directory/[slug]`) with `generateStaticParams` (14 slugs x 7 locales = 98 pages)
+- [x] `PartnerDetailContent` client component — hero image, two-column layout (description + contact sidebar), map embed, back link
+- [x] Per-partner SEO metadata via `generateMetadata`
+- [x] Invalid slugs return 404 via `notFound()`
+- [x] Directory page refactored to import from `@/data/partners` (no more inline data)
+- [x] PartnerSpotlight refactored to use `getFeaturedPartners()` from shared data
+- [x] QuickLinks "Schools" now points to `/directory` (was `/about`)
+- [x] Sitemap updated with partner detail URLs via `getAllSlugs()`
+- [x] Partners barrel export updated with `MapEmbed` and `PartnerDetailContent`
+- [x] `Directory.detail` i18n keys added to all 7 locale files (backToDirectory, about, contact, location, visitWebsite)
+- [x] Build passes with 0 errors, 143 static pages generated
+
 ---
 
 ## Next Steps (Post-MVP)
@@ -223,7 +244,8 @@ src/
 │   │   ├── about/page.tsx ✅ (positive cons, Sevilla airport)
 │   │   ├── shop/page.tsx ✅ (nav label: "Fashion", kite gear promo)
 │   │   ├── conditions/page.tsx ✅
-│   │   └── directory/page.tsx ✅ (promoted partners spotlight)
+│   │   ├── directory/page.tsx ✅ (shared data, promoted partners)
+│   │   └── directory/[slug]/page.tsx ✅ (partner detail pages)
 │   ├── api/
 │   │   ├── shopify/products/route.ts ✅
 │   │   └── weather/route.ts ✅
@@ -241,8 +263,10 @@ src/
 │   ├── illustrations/ ✅ (BeachIcons, KitesurferScene, CoastlineStrip, TarifaSkyline)
 │   ├── shop/ ✅ (ProductCard, ProductGrid, CategoryFilter, SearchBar)
 │   ├── weather/ ✅ (CurrentConditions, WindForecast, WindguruEmbed, BeachCamEmbed, SpotSelector, UVIndex)
-│   ├── partners/ ✅ (PartnerCard, PartnerGrid, ContactButtons, MapEmbed)
+│   ├── partners/ ✅ (PartnerCard, PartnerGrid, ContactButtons, MapEmbed, PartnerDetailContent)
 │   └── common/ ✅ (Section, Container, WaveDivider, PageHeader, LoadingSpinner, ErrorBoundary, ShapedContainer, FloatingIllustration)
+├── data/
+│   └── partners.ts ✅ (shared partner data, helpers)
 ├── lib/
 │   ├── shopify/ ✅ (mcp-client.ts, types.ts)
 │   ├── sanity/ ✅ (client.ts, queries.ts, image.ts)

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E6D3"/>
+      <stop offset="100%" stop-color="#D7CCC8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Wave pattern at bottom -->
+  <path d="M0,420 C100,390 200,440 300,410 C400,380 500,430 600,400 C700,370 750,410 800,395 L800,500 L0,500 Z" fill="rgba(0,0,0,0.05)"/>
+  <path d="M0,450 C120,430 220,470 350,440 C450,420 550,460 680,435 C740,425 770,445 800,440 L800,500 L0,500 Z" fill="rgba(0,0,0,0.04)"/>
+  <path d="M0,475 C80,465 180,485 300,470 C400,460 520,480 650,468 C720,462 760,478 800,472 L800,500 L0,500 Z" fill="rgba(0,0,0,0.03)"/>
+  <!-- House / accommodation icon -->
+  <g transform="translate(400,170)" fill="none" stroke="#4E342E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- House roof -->
+    <path d="M-50,0 L0,-40 L50,0" fill="rgba(78,52,46,0.1)"/>
+    <!-- House body -->
+    <rect x="-40" y="0" width="80" height="50" fill="rgba(78,52,46,0.08)"/>
+    <!-- Door -->
+    <rect x="-10" y="20" width="20" height="30" rx="10" fill="rgba(78,52,46,0.1)"/>
+    <!-- Door knob -->
+    <circle cx="6" cy="38" r="2" fill="#4E342E"/>
+    <!-- Windows -->
+    <rect x="-35" y="10" width="18" height="15" rx="2" fill="rgba(78,52,46,0.08)"/>
+    <line x1="-26" y1="10" x2="-26" y2="25" stroke="#4E342E" stroke-width="1.5"/>
+    <line x1="-35" y1="17.5" x2="-17" y2="17.5" stroke="#4E342E" stroke-width="1.5"/>
+    <rect x="17" y="10" width="18" height="15" rx="2" fill="rgba(78,52,46,0.08)"/>
+    <line x1="26" y1="10" x2="26" y2="25" stroke="#4E342E" stroke-width="1.5"/>
+    <line x1="17" y1="17.5" x2="35" y2="17.5" stroke="#4E342E" stroke-width="1.5"/>
+    <!-- Chimney -->
+    <rect x="20" y="-30" width="12" height="20" fill="rgba(78,52,46,0.1)" stroke="#4E342E" stroke-width="2"/>
+    <!-- Key icon beside house -->
+    <g transform="translate(55,-15) scale(0.9)">
+      <circle cx="0" cy="0" r="10" fill="rgba(78,52,46,0.08)" stroke="#4E342E" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="4" fill="none" stroke="#4E342E" stroke-width="2"/>
+      <line x1="10" y1="0" x2="30" y2="0" stroke="#4E342E" stroke-width="2.5"/>
+      <line x1="25" y1="0" x2="25" y2="7" stroke="#4E342E" stroke-width="2"/>
+      <line x1="30" y1="0" x2="30" y2="7" stroke="#4E342E" stroke-width="2"/>
+    </g>
+  </g>
+  <!-- Partner name (dark text for light background) -->
+  <text x="400" y="295" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="700" fill="#4E342E" letter-spacing="1">Casa Tarifa Rentals</text>
+  <text x="400" y="325" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="rgba(78,52,46,0.6)" letter-spacing="3">ACCOMMODATION</text>
+</svg>

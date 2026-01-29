@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7043"/>
+      <stop offset="100%" stop-color="#E64A19"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Wave pattern at bottom -->
+  <path d="M0,420 C100,390 200,440 300,410 C400,380 500,430 600,400 C700,370 750,410 800,395 L800,500 L0,500 Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M0,450 C120,430 220,470 350,440 C450,420 550,460 680,435 C740,425 770,445 800,440 L800,500 L0,500 Z" fill="rgba(255,255,255,0.06)"/>
+  <path d="M0,475 C80,465 180,485 300,470 C400,460 520,480 650,468 C720,462 760,478 800,472 L800,500 L0,500 Z" fill="rgba(255,255,255,0.04)"/>
+  <!-- Beach hut / chiringuito with umbrella icon -->
+  <g transform="translate(400,170)" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Beach umbrella / palapa roof -->
+    <path d="M-45,-25 C-45,-45 -25,-55 0,-55 C25,-55 45,-45 45,-25 Z" fill="rgba(255,255,255,0.15)"/>
+    <!-- Roof thatch lines -->
+    <path d="M-35,-30 C-25,-42 -10,-48 0,-50" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <path d="M35,-30 C25,-42 10,-48 0,-50" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <!-- Support poles -->
+    <line x1="-40" y1="-25" x2="-40" y2="30"/>
+    <line x1="40" y1="-25" x2="40" y2="30"/>
+    <line x1="0" y1="-55" x2="0" y2="-25"/>
+    <!-- Counter / bar -->
+    <rect x="-40" y="10" width="80" height="20" rx="2" fill="rgba(255,255,255,0.1)"/>
+    <!-- Bar items -->
+    <rect x="-30" y="0" width="8" height="12" rx="2" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+    <rect x="-15" y="2" width="8" height="10" rx="2" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+    <!-- Plate -->
+    <ellipse cx="15" cy="8" rx="10" ry="3" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+    <!-- Small flag on top -->
+    <line x1="0" y1="-55" x2="0" y2="-65" stroke="white" stroke-width="2"/>
+    <path d="M0,-65 L15,-60 L0,-55" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1.5"/>
+  </g>
+  <!-- Partner name -->
+  <text x="400" y="293" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-weight="700" fill="white" letter-spacing="1">Chiringuito El Pirata</text>
+  <text x="400" y="323" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" letter-spacing="3">FOOD &amp; DRINK</text>
+</svg>

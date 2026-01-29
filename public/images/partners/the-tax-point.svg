@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#795548"/>
+      <stop offset="100%" stop-color="#4E342E"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Wave pattern at bottom -->
+  <path d="M0,420 C100,390 200,440 300,410 C400,380 500,430 600,400 C700,370 750,410 800,395 L800,500 L0,500 Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M0,450 C120,430 220,470 350,440 C450,420 550,460 680,435 C740,425 770,445 800,440 L800,500 L0,500 Z" fill="rgba(255,255,255,0.06)"/>
+  <path d="M0,475 C80,465 180,485 300,470 C400,460 520,480 650,468 C720,462 760,478 800,472 L800,500 L0,500 Z" fill="rgba(255,255,255,0.04)"/>
+  <!-- Calculator / document icon -->
+  <g transform="translate(400,165)" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Document/clipboard -->
+    <rect x="-30" y="-50" width="60" height="80" rx="4" fill="rgba(255,255,255,0.15)"/>
+    <!-- Clip at top -->
+    <rect x="-15" y="-58" width="30" height="16" rx="3" fill="rgba(255,255,255,0.1)" stroke="white" stroke-width="2.5"/>
+    <!-- Euro/currency symbol -->
+    <text x="0" y="-12" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.3)" font-weight="700" stroke="none">&#8364;</text>
+    <!-- Lines on document -->
+    <line x1="-18" y1="5" x2="18" y2="5" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <line x1="-18" y1="14" x2="10" y2="14" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <line x1="-18" y1="23" x2="15" y2="23" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <!-- Checkmark -->
+    <path d="M8,20 L12,25 L22,12" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" fill="none"/>
+    <!-- Small calculator beside -->
+    <g transform="translate(45,0)">
+      <rect x="-12" y="-20" width="24" height="32" rx="2" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+      <rect x="-8" y="-16" width="16" height="8" rx="1" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <circle cx="-4" cy="0" r="1.5" fill="rgba(255,255,255,0.4)"/>
+      <circle cx="4" cy="0" r="1.5" fill="rgba(255,255,255,0.4)"/>
+      <circle cx="-4" cy="7" r="1.5" fill="rgba(255,255,255,0.4)"/>
+      <circle cx="4" cy="7" r="1.5" fill="rgba(255,255,255,0.4)"/>
+    </g>
+  </g>
+  <!-- Partner name -->
+  <text x="400" y="290" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="700" fill="white" letter-spacing="1">The Tax Point</text>
+  <text x="400" y="320" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" letter-spacing="3">SERVICES</text>
+</svg>

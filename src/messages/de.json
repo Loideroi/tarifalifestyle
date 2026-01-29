@@ -112,7 +112,14 @@
     "contact": "Contact",
     "website": "Website",
     "directions": "Get Directions",
-    "noPartners": "No partners found in this category"
+    "noPartners": "No partners found in this category",
+    "detail": {
+      "backToDirectory": "Zurück zum Verzeichnis",
+      "about": "Über",
+      "contact": "Kontakt",
+      "location": "Standort",
+      "visitWebsite": "Website besuchen"
+    }
   },
   "About": {
     "title": "About Tarifa",

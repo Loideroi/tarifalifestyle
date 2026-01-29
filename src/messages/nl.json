@@ -112,7 +112,14 @@
     "contact": "Contact",
     "website": "Website",
     "directions": "Route",
-    "noPartners": "Geen partners gevonden in deze categorie"
+    "noPartners": "Geen partners gevonden in deze categorie",
+    "detail": {
+      "backToDirectory": "Terug naar Gids",
+      "about": "Over",
+      "contact": "Contact",
+      "location": "Locatie",
+      "visitWebsite": "Bezoek Website"
+    }
   },
   "About": {
     "title": "Over Tarifa",

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7043"/>
+      <stop offset="100%" stop-color="#E64A19"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Wave pattern at bottom -->
+  <path d="M0,420 C100,390 200,440 300,410 C400,380 500,430 600,400 C700,370 750,410 800,395 L800,500 L0,500 Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M0,450 C120,430 220,470 350,440 C450,420 550,460 680,435 C740,425 770,445 800,440 L800,500 L0,500 Z" fill="rgba(255,255,255,0.06)"/>
+  <path d="M0,475 C80,465 180,485 300,470 C400,460 520,480 650,468 C720,462 760,478 800,472 L800,500 L0,500 Z" fill="rgba(255,255,255,0.04)"/>
+  <!-- Coffee mug icon -->
+  <g transform="translate(400,168)" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Mug body -->
+    <rect x="-28" y="-15" width="56" height="50" rx="5" fill="rgba(255,255,255,0.15)"/>
+    <!-- Handle -->
+    <path d="M28,-2 C42,-2 45,8 45,18 C45,28 40,33 28,33" fill="none" stroke="white" stroke-width="3"/>
+    <!-- Coffee surface -->
+    <ellipse cx="0" cy="-12" rx="25" ry="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <!-- Steam curls -->
+    <path d="M-12,-22 C-12,-30 -7,-28 -7,-36 C-7,-42 -2,-40 -2,-46" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+    <path d="M5,-20 C5,-28 10,-26 10,-34 C10,-40 15,-38 15,-44" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"/>
+    <!-- Saucer -->
+    <ellipse cx="0" cy="38" rx="35" ry="6" fill="rgba(255,255,255,0.1)" stroke="white" stroke-width="2"/>
+    <!-- Small bean decorations -->
+    <ellipse cx="-10" cy="12" rx="5" ry="3" transform="rotate(-20,-10,12)" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <ellipse cx="8" cy="15" rx="5" ry="3" transform="rotate(15,8,15)" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  </g>
+  <!-- Partner name -->
+  <text x="400" y="290" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="700" fill="white" letter-spacing="1">Cafe Azul</text>
+  <text x="400" y="320" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" letter-spacing="3">FOOD &amp; DRINK</text>
+</svg>

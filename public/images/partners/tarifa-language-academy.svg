@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Wave pattern at bottom -->
+  <path d="M0,420 C100,390 200,440 300,410 C400,380 500,430 600,400 C700,370 750,410 800,395 L800,500 L0,500 Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M0,450 C120,430 220,470 350,440 C450,420 550,460 680,435 C740,425 770,445 800,440 L800,500 L0,500 Z" fill="rgba(255,255,255,0.06)"/>
+  <path d="M0,475 C80,465 180,485 300,470 C400,460 520,480 650,468 C720,462 760,478 800,472 L800,500 L0,500 Z" fill="rgba(255,255,255,0.04)"/>
+  <!-- Open book with speech bubble icon -->
+  <g transform="translate(400,170)" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Book left page -->
+    <path d="M-5,-15 L-5,-50 C-5,-50 -15,-55 -40,-50 L-40,-15 C-40,-15 -15,-20 -5,-15" fill="rgba(255,255,255,0.15)"/>
+    <!-- Book right page -->
+    <path d="M5,-15 L5,-50 C5,-50 15,-55 40,-50 L40,-15 C40,-15 15,-20 5,-15" fill="rgba(255,255,255,0.12)"/>
+    <!-- Book spine -->
+    <line x1="0" y1="-52" x2="0" y2="-13"/>
+    <!-- Text lines on left page -->
+    <line x1="-32" y1="-42" x2="-12" y2="-42" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <line x1="-32" y1="-35" x2="-15" y2="-35" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <line x1="-32" y1="-28" x2="-18" y2="-28" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <!-- Text lines on right page -->
+    <line x1="12" y1="-42" x2="32" y2="-42" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <line x1="15" y1="-35" x2="32" y2="-35" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <line x1="18" y1="-28" x2="32" y2="-28" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <!-- Speech bubble -->
+    <path d="M15,5 C15,-5 20,-10 35,-10 L55,-10 C60,-10 65,-5 65,0 C65,8 60,12 55,12 L35,12 C30,12 25,10 22,15 L20,20 L22,12 C18,12 15,10 15,5 Z" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2"/>
+    <!-- Speech text -->
+    <text x="40" y="4" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)" font-weight="600">Hola</text>
+    <!-- Graduation cap above -->
+    <path d="M-20,-62 L0,-72 L20,-62 L0,-52 Z" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+    <line x1="0" y1="-72" x2="0" y2="-62" stroke="white" stroke-width="2"/>
+    <line x1="15" y1="-58" x2="15" y2="-50" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+  </g>
+  <!-- Partner name -->
+  <text x="400" y="295" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="700" fill="white" letter-spacing="1">Tarifa Language Academy</text>
+  <text x="400" y="325" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" letter-spacing="3">EDUCATION</text>
+</svg>

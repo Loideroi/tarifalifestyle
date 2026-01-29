@@ -112,7 +112,14 @@
     "contact": "Contacto",
     "website": "Sitio Web",
     "directions": "Cómo Llegar",
-    "noPartners": "No se encontraron socios en esta categoría"
+    "noPartners": "No se encontraron socios en esta categoría",
+    "detail": {
+      "backToDirectory": "Volver al Directorio",
+      "about": "Sobre",
+      "contact": "Contacto",
+      "location": "Ubicación",
+      "visitWebsite": "Visitar Sitio Web"
+    }
   },
   "About": {
     "title": "Sobre Tarifa",

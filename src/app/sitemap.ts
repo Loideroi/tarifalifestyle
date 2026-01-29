@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { getAllSlugs } from '@/data/partners';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://tarifalifestyle.com';
 
@@ -30,6 +31,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: page.changeFrequency,
         priority: page.priority,
+        alternates: {
+          languages: alternates,
+        },
+      });
+    }
+  }
+
+  // Partner detail pages
+  const partnerSlugs = getAllSlugs();
+  for (const slug of partnerSlugs) {
+    for (const locale of locales) {
+      const alternates: Record<string, string> = {};
+      for (const altLocale of locales) {
+        alternates[altLocale] = `${BASE_URL}/${altLocale}/directory/${slug}`;
+      }
+
+      entries.push({
+        url: `${BASE_URL}/${locale}/directory/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.6,
         alternates: {
           languages: alternates,
         },

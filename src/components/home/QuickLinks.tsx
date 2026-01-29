@@ -46,7 +46,7 @@ export function QuickLinks({
       color: 'palm',
     },
     {
-      href: '/about',
+      href: '/directory',
       icon: BookWithWave,
       title: schoolsLabel,
       color: 'ocean',

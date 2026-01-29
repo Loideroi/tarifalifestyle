@@ -1867,6 +1867,33 @@ npx lighthouse https://tarifalifestyle.com # Performance
 
 ---
 
+## Phase 7.4: Business Directory Upgrade
+
+### Summary
+Upgraded the business directory with consolidated partner data, individual detail pages, fixed external links, corrected nursery name, partner hero images, and updated navigation targets.
+
+### New Files
+- `src/data/partners.ts` — Shared `PartnerData` type, `PARTNERS` array (14 entries), helper functions (`getPartnerBySlug`, `getFeaturedPartners`, `getAllSlugs`)
+- `src/app/[locale]/directory/[slug]/page.tsx` — Partner detail page (server component, `generateStaticParams`, `generateMetadata`, breadcrumbs)
+- `src/components/partners/PartnerDetailContent.tsx` — Client component for detail page body (hero image, two-column layout, contact sidebar, map, back link)
+- `public/images/partners/{slug}.svg` — 14 branded SVG placeholder hero images with category-themed gradients
+
+### Modified Files
+- `src/app/[locale]/directory/page.tsx` — Removed inline data, imports from `@/data/partners`
+- `src/components/home/PartnerSpotlight.tsx` — Uses `getFeaturedPartners()` from shared data
+- `src/components/home/QuickLinks.tsx` — "Schools" link changed from `/about` to `/directory`
+- `src/app/sitemap.ts` — Added partner detail URLs via `getAllSlugs()`
+- `src/components/partners/index.ts` — Added `MapEmbed` and `PartnerDetailContent` exports
+- `src/messages/{en,es,nl,de,fr,it,pt}.json` — Added `Directory.detail` keys
+
+### Data Fixes Applied
+- "Tarifa Day Care" renamed to "La Tribu de la Luz" (Montessori family association)
+- `tarifaspanish.com` website removed (DNS dead)
+- `casatarifa.com` website removed (DNS dead)
+- All other partner links verified working
+
+---
+
 **Document End**
 
 *This implementation plan should be read alongside PRD.md, PRD-COMPACT.md, and Research.md*

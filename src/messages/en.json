@@ -112,7 +112,14 @@
     "contact": "Contact",
     "website": "Website",
     "directions": "Get Directions",
-    "noPartners": "No partners found in this category"
+    "noPartners": "No partners found in this category",
+    "detail": {
+      "backToDirectory": "Back to Directory",
+      "about": "About",
+      "contact": "Contact",
+      "location": "Location",
+      "visitWebsite": "Visit Website"
+    }
   },
   "About": {
     "title": "About Tarifa",

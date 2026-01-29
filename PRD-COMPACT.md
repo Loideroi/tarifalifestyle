@@ -1,6 +1,6 @@
 # Tarifalifestyle.com - Compact PRD
 
-**Updated:** January 29, 2026 (Phase 7.3 updates applied)
+**Updated:** January 29, 2026 (Phase 7.4 updates applied)
 
 ## Overview
 
@@ -53,7 +53,8 @@ Analytics:    GA4 + Vercel Analytics
 | `/about` | Tarifa intro, cost of living, pros/cons (positive spin), airports (incl. Sevilla 2h) |
 | `/conditions` | Live wind/weather/beach cams |
 | `/fashion` | Tarifa Air Force products + kite gear promo banner (renamed from "Shop") |
-| `/directory` | Partner businesses with map, promoted spotlight |
+| `/directory` | Partner businesses (14) with category filter, promoted spotlight |
+| `/directory/[slug]` | Individual partner detail pages with hero image, contact sidebar, map |
 | `/guides/*` | Moving, healthcare, education, working |
 | `/lifestyle` | Kite spots, activities, dining |
 | `/community` | Events, news, expat stories |

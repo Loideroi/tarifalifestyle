@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Wave pattern at bottom -->
+  <path d="M0,420 C100,390 200,440 300,410 C400,380 500,430 600,400 C700,370 750,410 800,395 L800,500 L0,500 Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M0,450 C120,430 220,470 350,440 C450,420 550,460 680,435 C740,425 770,445 800,440 L800,500 L0,500 Z" fill="rgba(255,255,255,0.06)"/>
+  <path d="M0,475 C80,465 180,485 300,470 C400,460 520,480 650,468 C720,462 760,478 800,472 L800,500 L0,500 Z" fill="rgba(255,255,255,0.04)"/>
+  <!-- Community / people group icon -->
+  <g transform="translate(400,165)" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Center person -->
+    <circle cx="0" cy="-35" r="10" fill="rgba(255,255,255,0.2)"/>
+    <path d="M-18,-10 C-18,-22 -10,-25 0,-25 C10,-25 18,-22 18,-10 L18,5 L-18,5 Z" fill="rgba(255,255,255,0.15)"/>
+    <!-- Left person -->
+    <circle cx="-35" cy="-28" r="9" fill="rgba(255,255,255,0.15)"/>
+    <path d="M-50,-5 C-50,-16 -43,-18 -35,-18 C-27,-18 -20,-16 -20,-5 L-20,8 L-50,8 Z" fill="rgba(255,255,255,0.1)"/>
+    <!-- Right person -->
+    <circle cx="35" cy="-28" r="9" fill="rgba(255,255,255,0.15)"/>
+    <path d="M20,-5 C20,-16 27,-18 35,-18 C43,-18 50,-16 50,-5 L50,8 L20,8 Z" fill="rgba(255,255,255,0.1)"/>
+    <!-- Sun/light rays above (luz = light) -->
+    <circle cx="0" cy="-60" r="5" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="2"/>
+    <line x1="0" y1="-70" x2="0" y2="-75" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+    <line x1="-10" y1="-68" x2="-14" y2="-72" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <line x1="10" y1="-68" x2="14" y2="-72" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <line x1="-13" y1="-60" x2="-18" y2="-60" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <line x1="13" y1="-60" x2="18" y2="-60" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <!-- Hands connected line -->
+    <path d="M-20,0 C-12,15 12,15 20,0" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"/>
+  </g>
+  <!-- Partner name -->
+  <text x="400" y="295" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="700" fill="white" letter-spacing="1">La Tribu de la Luz</text>
+  <text x="400" y="325" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" letter-spacing="3">EDUCATION</text>
+</svg>
